@@ -1,12 +1,8 @@
 /*
 Author: Brandon Yip
 
-Refactors needed to be done:
-1) Change variable names to be more clear
-2) Move addition, subtraction, divide, multiply to calculator class
-3) Remove convertLetter class and move function to this class
-4) change switch case to if else
-5) Move certain parts of start to another function to increase readability. ex. try catch, 
+Basic calculator program
+
  */
 import java.util.Scanner;
 
