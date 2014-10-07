@@ -40,10 +40,6 @@ public class CalculatorInterface {
 	System.out.println("-> MULTIPLY: type 'm'.");
 	System.out.println("-> DIVIDE: type 'd'.");
     }
-    /*
-    public void getSelection() {
-	var1 = in.nextLine();
-	}*/
 
     public void start() {
 	in = new Scanner(System.in);
