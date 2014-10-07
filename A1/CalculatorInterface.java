@@ -8,24 +8,24 @@ import java.util.Scanner;
 
 public class CalculatorInterface {
     private Scanner in;
-    public String var1;
-    private ConvertLetter prog1;
-    private SubtractNumbers prog3;
-    private MultiplyNumbers prog4;
-    private DivideNumbers prog5;  
-    public char var2;
-    public int num1;
-    public int num2;
-    public int num3;
-	public int[] array;
+    public String command;
+    private ConvertLetter convertLetter;
+    private SubtractNumbers subtraction;
+    private MultiplyNumbers multiplication;
+    private DivideNumbers division;  
+    public char convertedChar;
+    public int firstNum;
+    public int secondNum;
+    public int result;
+	public int[] savedNumbers;
 
     public CalculatorInterface() {
-	prog1 = new ConvertLetter();
+	convertLetter = new ConvertLetter();
 	prog3 = new SubtractNumbers();
-	prog4 = new MultiplyNumbers();
-	prog5 = new DivideNumbers();
-	var1 = "";
-	array = new int[10];
+	multiplication = new MultiplyNumbers();
+	division = new DivideNumbers();
+	command = "";
+	savedNumbers = new int[10];
     }
 
     public void display()
@@ -42,19 +42,19 @@ public class CalculatorInterface {
 	in = new Scanner(System.in);
 	do{
 	    display();
-	    var1 = in.nextLine();
-	    if(var1.length() != 1)
+	    command = in.nextLine();
+	    if(command.length() != 1)
 		System.out.println("Sup you didn't put one character");
 	    else {
-		var2 = prog1.convertToAscii(var1);
-		switch (var2){
+		convertedChar = convertLetter.convertToAscii(command);
+		switch (convertedChar){
 		case 'A': case 'a':
 		    System.out.println("Addition: Input two numbers.");
 		    try {
-			num1 = Integer.parseInt(in.nextLine());
-			num2 = Integer.parseInt(in.nextLine());
-			num3 = num1 + num2;
-			System.out.println("Result is: " + num3);
+			firstNum = Integer.parseInt(in.nextLine());
+			secondNum = Integer.parseInt(in.nextLine());
+			result = firstNum + secondNum;
+			System.out.println("Result is: " + result);
 		    }
 		    catch(NumberFormatException e){
 			System.out.println("One or both inputs were not numbers!");
@@ -63,10 +63,10 @@ public class CalculatorInterface {
 		case 'S': case 's':
 		    System.out.println("Subtraction: Input two numbers.");
 		    try {
-			num1 = Integer.parseInt(in.nextLine());
-			num2 = Integer.parseInt(in.nextLine());
-			num3 = prog3.action(num1, num2);
-			System.out.println("Result is: " + num3);
+			firstNum = Integer.parseInt(in.nextLine());
+			secondNum = Integer.parseInt(in.nextLine());
+			result = prog3.action(firstNum, secondNum);
+			System.out.println("Result is: " + result);
 		    }
 		    catch(NumberFormatException e){
 			System.out.println("One or both inputs were not numbers!");
@@ -75,10 +75,10 @@ public class CalculatorInterface {
 		case 'M': case 'm':
 		    System.out.println("Multiplying");
 		    try {
-			num1 = Integer.parseInt(in.nextLine());
-			num2 = Integer.parseInt(in.nextLine());
-			num3 = prog4.action(num1, num2);
-			System.out.println("Result is: " + num3);
+			firstNum = Integer.parseInt(in.nextLine());
+			secondNum = Integer.parseInt(in.nextLine());
+			result = multiplication.action(firstNum, secondNum);
+			System.out.println("Result is: " + result);
 		    }
 		    catch(NumberFormatException e){
 			System.out.println("One or both inputs were not numbers!");
@@ -87,10 +87,10 @@ public class CalculatorInterface {
 		case 'D': case 'd':
 		    System.out.println("Dividing");
 		    try {
-			num1 = Integer.parseInt(in.nextLine());
-			num2 = Integer.parseInt(in.nextLine());
-			num3 = prog5.action(num1, num2);
-			System.out.println("Result is: " + num3);
+			firstNum = Integer.parseInt(in.nextLine());
+			secondNum = Integer.parseInt(in.nextLine());
+			result = division.action(firstNum, secondNum);
+			System.out.println("Result is: " + result);
 		    }
 		    catch(NumberFormatException e){
 			System.out.println("One or both inputs were not numbers!");
@@ -104,14 +104,14 @@ public class CalculatorInterface {
 		    break;
 		}
 	    }
-	} while(!(var1.equalsIgnoreCase("q")));
+	} while(!(command.equalsIgnoreCase("q")));
     }
 	
-	public void storefromArray () {
-		//method to store answer into array
+	public void storefromsavedNumbers () {
+		//method to store answer into savedNumbers
 	}
 
-	public void getfromArray() {
-		//method to get stored answer from array
+	public void getfromsavedNumbers() {
+		//method to get stored answer from savedNumbers
 	}
 }
