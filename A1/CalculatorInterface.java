@@ -10,7 +10,6 @@ public class CalculatorInterface {
     private Scanner in;
     public String var1;
     private ConvertLetter prog1;
-    private Calculator prog2;
     private SubtractNumbers prog3;
     private MultiplyNumbers prog4;
     private DivideNumbers prog5;  
@@ -21,7 +20,6 @@ public class CalculatorInterface {
 	public int[] array;
 
     public CalculatorInterface() {
-	prog2 = new Calculator();
 	prog1 = new ConvertLetter();
 	prog3 = new SubtractNumbers();
 	prog4 = new MultiplyNumbers();
@@ -37,6 +35,7 @@ public class CalculatorInterface {
 	System.out.println("-> SUBTRACT: type 's'.");
 	System.out.println("-> MULTIPLY: type 'm'.");
 	System.out.println("-> DIVIDE: type 'd'.");
+	System.out.println("-> Quit Program: type 'q'.");
     }
 
     public void start() {
@@ -66,7 +65,7 @@ public class CalculatorInterface {
 		    try {
 			num1 = Integer.parseInt(in.nextLine());
 			num2 = Integer.parseInt(in.nextLine());
-			num3 = prog3.subtract(num1, num2);
+			num3 = prog3.action(num1, num2);
 			System.out.println("Result is: " + num3);
 		    }
 		    catch(NumberFormatException e){
@@ -78,7 +77,7 @@ public class CalculatorInterface {
 		    try {
 			num1 = Integer.parseInt(in.nextLine());
 			num2 = Integer.parseInt(in.nextLine());
-			num3 = prog4.multiply(num1, num2);
+			num3 = prog4.action(num1, num2);
 			System.out.println("Result is: " + num3);
 		    }
 		    catch(NumberFormatException e){
@@ -90,7 +89,7 @@ public class CalculatorInterface {
 		    try {
 			num1 = Integer.parseInt(in.nextLine());
 			num2 = Integer.parseInt(in.nextLine());
-			num3 = prog5.divide(num1, num2);
+			num3 = prog5.action(num1, num2);
 			System.out.println("Result is: " + num3);
 		    }
 		    catch(NumberFormatException e){
