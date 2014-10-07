@@ -18,6 +18,7 @@ public class CalculatorInterface {
     public int num1;
     public int num2;
     public int num3;
+	public int[] array;
 
     public CalculatorInterface() {
 	prog2 = new Calculator();
@@ -26,6 +27,7 @@ public class CalculatorInterface {
 	prog4 = new MultiplyNumbers();
 	prog5 = new DivideNumbers();
 	var1 = "";
+	array = new int[10];
     }
 
     public void display()
@@ -105,5 +107,12 @@ public class CalculatorInterface {
 	    }
 	} while(!(var1.equalsIgnoreCase("q")));
     }
+	
+	public void storefromArray () {
+		//method to store answer into array
+	}
 
+	public void getfromArray() {
+		//method to get stored answer from array
+	}
 }
