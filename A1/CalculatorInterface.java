@@ -1,7 +1,11 @@
 /*
 Author: Brandon Yip
 
-Basic calculator program
+Basic calculator program that
+- adds
+- subtracts
+- multiplies
+- divides
 
  */
 import java.util.Scanner;
@@ -22,6 +26,7 @@ public class CalculatorInterface {
 		savedNumbers = new int[10];
     }
 
+	//interface display
     public void display()
     {
 		System.out.println("\nCALCULATOR OPTIONS:");
@@ -32,7 +37,7 @@ public class CalculatorInterface {
 		System.out.println("-> Quit Program: type 'q'.");
     }
 
-	
+	//delegates control to the corresponding method; the user selects the calculation
 	public void commandInterpreter (char comm) {
 		try {
 			switch (comm){
@@ -66,34 +71,38 @@ public class CalculatorInterface {
 		}
 	}
 	
-	
+	//gets two numbers from the user
 	public void setInputs() {
 		firstNum = Integer.parseInt(in.nextLine());
 		secondNum = Integer.parseInt(in.nextLine());
 	}
 	
+	//calls add() in Calculator.java and prints results
 	public void addition() {
 		result = calc.add(firstNum, secondNum);
 		System.out.println("Result is: " + result);
 	}
 	
+	//calls subtract() in Calculator.java and prints results
 	public void subtraction() {
 		result = calc.subtract(firstNum, secondNum);
 		System.out.println("Result is: " + result);
 	}
 	
+	//calls multiply() in Calculator.java and prints results
 	public void multiplication() {
 		result = calc.multiply(firstNum, secondNum);
 		System.out.println("Result is: " + result);
 	}
 	
+	//calls divide() in Calculator.java and prints results
 	public void division() {
 		result = calc.divide(firstNum, secondNum);
 		System.out.println("Result is: " + result);
 	}
 	
 	
-	
+	//start of the program
     public void start() {
 		in = new Scanner(System.in);
 		do{
