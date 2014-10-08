@@ -33,56 +33,63 @@ public class CalculatorInterface {
     }
 
 	
-	public void addition() {
-		System.out.println("Addition: Input two numbers.");
+	public void commandInterpreter (char comm) {
 		try {
-			firstNum = Integer.parseInt(in.nextLine());
-			secondNum = Integer.parseInt(in.nextLine());
-			result = calc.add(firstNum, secondNum);
-			System.out.println("Result is: " + result);
-		} catch(NumberFormatException e){
+			switch (comm){
+				case 'A': case 'a':
+					System.out.println("Addition: Input two numbers.");
+					setInputs();
+					addition();
+					break;
+				case 'S': case 's':
+					System.out.println("Subtraction: Input two numbers.");
+					setInputs();
+					subtraction();
+					break;
+				case 'M': case 'm':
+					System.out.println("Multiplication: Input two numbers.");
+					setInputs();
+					multiplication();
+					break;
+				case 'D': case 'd':
+					System.out.println("Division: Input two numbers.");
+					setInputs();
+					division();
+					break;
+				case 'q': case 'Q':
+					System.out.println("Quitting the Program.");
+					break;
+			}
+		}
+		catch(NumberFormatException e){
 			System.out.println("One or both inputs were not numbers!");
 		}
+	}
+	
+	
+	public void setInputs() {
+		firstNum = Integer.parseInt(in.nextLine());
+		secondNum = Integer.parseInt(in.nextLine());
+	}
+	
+	public void addition() {
+		result = calc.add(firstNum, secondNum);
+		System.out.println("Result is: " + result);
 	}
 	
 	public void subtraction() {
-		System.out.println("Subtraction: Input two numbers.");
-		try {
-			firstNum = Integer.parseInt(in.nextLine());
-			secondNum = Integer.parseInt(in.nextLine());
-			result = calc.subtract(firstNum, secondNum);
-			System.out.println("Result is: " + result);
-		}
-		catch(NumberFormatException e){
-			System.out.println("One or both inputs were not numbers!");
-		}
+		result = calc.subtract(firstNum, secondNum);
+		System.out.println("Result is: " + result);
 	}
 	
 	public void multiplication() {
-		System.out.println("Multiplying");
-		try {
-			firstNum = Integer.parseInt(in.nextLine());
-			secondNum = Integer.parseInt(in.nextLine());
-			result = calc.multiply(firstNum, secondNum);
-			System.out.println("Result is: " + result);
-		}
-		catch(NumberFormatException e){
-			System.out.println("One or both inputs were not numbers!");
-		}
+		result = calc.multiply(firstNum, secondNum);
+		System.out.println("Result is: " + result);
 	}
 	
-	
 	public void division() {
-		System.out.println("Dividing");
-		try {
-			firstNum = Integer.parseInt(in.nextLine());
-			secondNum = Integer.parseInt(in.nextLine());
-			result = calc.divide(firstNum, secondNum);
-			System.out.println("Result is: " + result);
-		}
-		catch(NumberFormatException e){
-			System.out.println("One or both inputs were not numbers!");
-		}
+		result = calc.divide(firstNum, secondNum);
+		System.out.println("Result is: " + result);
 	}
 	
 	
@@ -97,23 +104,14 @@ public class CalculatorInterface {
 			else {
 				convertedChar = command.charAt(0);
 				switch (convertedChar){
-				case 'A': case 'a':
-					addition();
-					break;
-				case 'S': case 's':
-					subtraction();
-					break;
-				case 'M': case 'm':
-					multiplication();
-					break;
-				case 'D': case 'd':
-					division();
+				case 'A': case 'a': case 'S': case 's': case 'M': case 'm': case 'D': case 'd':
+					commandInterpreter(convertedChar);
 					break;
 				case 'q': case 'Q':
 					System.out.println("Quitting the Program.");
 					break;
 				default:
-					System.out.println("Invalid");
+					System.out.println("Invalid choice.");
 					break;
 				}
 			}
