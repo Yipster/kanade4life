@@ -14,8 +14,10 @@ public class CalculatorInterface {
     public int secondNum;
     public int result;
 	public int[] savedNumbers;
+	public Calculator calc;
 
     public CalculatorInterface() {
+		calc = new Calculator();
 		command = "";
 		savedNumbers = new int[10];
     }
@@ -36,7 +38,7 @@ public class CalculatorInterface {
 		try {
 			firstNum = Integer.parseInt(in.nextLine());
 			secondNum = Integer.parseInt(in.nextLine());
-			result = firstNum + secondNum;
+			result = calc.add(firstNum, secondNum);
 			System.out.println("Result is: " + result);
 		} catch(NumberFormatException e){
 			System.out.println("One or both inputs were not numbers!");
@@ -48,7 +50,7 @@ public class CalculatorInterface {
 		try {
 			firstNum = Integer.parseInt(in.nextLine());
 			secondNum = Integer.parseInt(in.nextLine());
-			result = firstNum - secondNum;
+			result = calc.subtract(firstNum, secondNum);
 			System.out.println("Result is: " + result);
 		}
 		catch(NumberFormatException e){
@@ -61,7 +63,7 @@ public class CalculatorInterface {
 		try {
 			firstNum = Integer.parseInt(in.nextLine());
 			secondNum = Integer.parseInt(in.nextLine());
-			result = firstNum * secondNum;
+			result = calc.multiply(firstNum, secondNum);
 			System.out.println("Result is: " + result);
 		}
 		catch(NumberFormatException e){
@@ -75,7 +77,7 @@ public class CalculatorInterface {
 		try {
 			firstNum = Integer.parseInt(in.nextLine());
 			secondNum = Integer.parseInt(in.nextLine());
-			result = firstNum / secondNum;
+			result = calc.divide(firstNum, secondNum);
 			System.out.println("Result is: " + result);
 		}
 		catch(NumberFormatException e){
@@ -108,7 +110,7 @@ public class CalculatorInterface {
 					division();
 					break;
 				case 'q': case 'Q':
-					System.out.println("Quiting");
+					System.out.println("Quitting the Program.");
 					break;
 				default:
 					System.out.println("Invalid");
