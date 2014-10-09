@@ -15,6 +15,13 @@ public class Calculator {
     }
 
     public int divide (int num1, int num2) {
-		return num1 / num2;
+		int num3 = 0;
+		try {
+			num3 = num1 / num2;
+		} catch (ArithmeticException e){
+			System.out.println("Division by zero is invalid.");
+			return 0;
+		}
+		return num3;
     }
 }
