@@ -100,7 +100,7 @@ public class Inspector {
 	}
 */
 
-
+/*
 
 	//method that inspects the constructor of the object
 	public void inspectConstructors () {
@@ -108,14 +108,14 @@ public class Inspector {
 		//myCons = currentClass.getConstructor(
 		
 	}
-
-	
+*/
+	/*
 	
 	//method that inspects the class fields
 	public void inspectFields () {
 		Field[] fieldList = currentClass.getDeclaredFields();
 		for (int i = 0; i < fieldList.length; i++) {
-			String fieldName = fieldList[i].getName()
+			String fieldName = fieldList[i].getName();
 			
 		}
 	}
@@ -147,6 +147,6 @@ public class Inspector {
 		if(Modifier.isVolatile(mod))
 			System.out.println("Volatile ");
 	}
-
+*/
 
 }
