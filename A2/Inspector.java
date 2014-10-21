@@ -92,7 +92,7 @@ public class Inspector {
 			System.out.println();
 
 			//get return type and print
-			String returnType = mtehodList[i].getReturnType().getName();
+			String returnType = methodList[i].getReturnType().getName();
 			System.out.println("   Return Type: " + returnType);
 			
 		}
@@ -104,9 +104,12 @@ public class Inspector {
 
 	//method that inspects the constructor of the object
 	public void inspectConstructors () {
-		Constructor myCons;
-		//myCons = currentClass.getConstructor(
 		
+		Constructor[] constructorList = currentClass.getDeclaredConstructors();
+		for (int i = 0; i < constructorList.length(); i++) {
+			System.out.print("( ");
+			
+		}
 	}
 */
 	/*
