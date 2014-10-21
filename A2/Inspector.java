@@ -33,13 +33,13 @@ public class Inspector {
 		System.out.println();
 
 		//3) Name of interfaces that the class implements
-		//inspectInterfaces();
+		inspectInterfaces();
 
 		//4) Methods that the class declares. 
 		//inspectMethods();
 	}
 
-/*
+
 
 	//method that inspects the interfaces of the object 
 	public void inspectInterfaces() {
@@ -51,7 +51,7 @@ public class Inspector {
 		}
 		System.out.println();
 	}
-	*/
+
 
 
 /*

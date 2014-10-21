@@ -1,7 +1,7 @@
 
 public class Driver {
 	public static void main(String[] args) {
-		Bicycle test = new Bicycle(1, 1, 1);
+		RectanglePlus test = new RectanglePlus();
 		Inspector inspector = new Inspector();
 		inspector.inspect(test, false);
 	}
