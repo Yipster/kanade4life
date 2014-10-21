@@ -22,21 +22,26 @@ public class Inspector {
 	public void inspect(Object obj, boolean recursive) {
 		
 		//1) Get name of declaring class
-		System.out.println("The name of this object's class is " + obj.getClass().getName());
-		System.out.println();
+		System.out.println("Class Name: " + obj.getClass().getName());
 		
 		//2) Get name of immediate superclass
 		currentClass = obj.getClass();
 		Class superclass = currentClass.getSuperclass();
 		String className = superclass.getName();
-		System.out.println("The name of the superclass of this object's class is " + className);
+		System.out.println("Direct Superclass Name: " + className);
 		System.out.println();
 
 		//3) Name of interfaces that the class implements
 		inspectInterfaces();
 
 		//4) Methods that the class declares. 
-		//inspectMethods();
+		inspectMethods();
+		
+		//5) Constructor(s) that the class has
+		inspectConstructors();
+		
+		//6) Fields that the class has
+		inspectFields();
 	}
 
 
@@ -44,88 +49,108 @@ public class Inspector {
 	//method that inspects the interfaces of the object 
 	public void inspectInterfaces() {
 		System.out.println("The interface(s) of this object's class is(are):");
-		Class[] theInterfaces = currentClass.getInterfaces();
-		for (int i = 0; i < theInterfaces.length; i++ ){
-			String interfaceName = theInterfaces[i].getName();
-			System.out.println(interfaceName);
-		}
+		Class[] interfaceList = currentClass.getInterfaces();
+		printList(interfaceList);
+		System.out.println();
 		System.out.println();
 	}
 
 
 
-/*
+
 	//method that inspects the methods of the object
 	public void inspectMethods() {
 		//4) Methods the class declares
-		System.out.println("The method(s) the class declares:")
+		System.out.println("The method(s) the class declares:");
 		Method[] methodList = currentClass.getDeclaredMethods();
 		for (int i = 0; i < methodList.length; i++) {
 			//get method name and print
+			int k = i + 1;
 			String methodName = methodList[i].getName();
-			System.out.println("Name: " + methodName);
+			System.out.println(k + ") Name: " + methodName);
 			
 			//get parameter types of the specified method and print
-			Class[] paramterTypes = methodList[i].getParameterTypes();
-			System.out.println("   Parameter Types: ");
-			for (int j = 0; j < parameterTypes.length; j++) {
-				String parameterName = parameterTypes[j].getName();
-				int k = j + 1;
-				System.out.println("     " + k + ") " + parameterName);
-			}
+			Class[] parameterTypes = methodList[i].getParameterTypes();
+			System.out.print("   Parameter Types: ");
+			printList(parameterTypes);
 			System.out.println();
 
 			//get exception types of the specified method and print			
 			Class[] exceptionTypes = methodList[i].getExceptionTypes();
-			System.out.println("   Exception Types: ");
-			for (int j = 0; j < exceptionTypes.length; j++) {
-				String exceptionName = exceptionTypes[j].getName();
-				int k = j + 1;
-				System.out.println("     " + k ") " + exceptionName);
-			}
+			System.out.print("   Exception Types: ");
+			printList(exceptionTypes);
 			System.out.println();
 
 			//get the method's modifiers and print
-			System.out.println("   Modifiers: ");
 			int mod = methodList[i].getModifiers();
 			testModifiers(mod);
-			System.out.println();
 
 			//get return type and print
 			String returnType = methodList[i].getReturnType().getName();
 			System.out.println("   Return Type: " + returnType);
-			
+			System.out.println();
 		}
 
 	}
-*/
 
-/*
+
+
 
 	//method that inspects the constructor of the object
 	public void inspectConstructors () {
-		
+		System.out.println("The constructor(s) in " + currentClass.getName() + ":");
 		Constructor[] constructorList = currentClass.getDeclaredConstructors();
-		for (int i = 0; i < constructorList.length(); i++) {
-			System.out.print("( ");
-			
+		for (int i = 0; i < constructorList.length; i++) {
+			//get the constructor i's parameter types
+			Class[] parameterTypes = constructorList[i].getParameterTypes();
+			int k = i + 1;
+			System.out.print(" " + k + ") " + "Parameters: ");
+			printList(parameterTypes);
+			System.out.println();
+			System.out.print("  ");
+			int mod = constructorList[i].getModifiers();
+			testModifiers(mod);
+			System.out.println();
 		}
 	}
-*/
-	/*
+
+	
 	
 	//method that inspects the class fields
 	public void inspectFields () {
 		Field[] fieldList = currentClass.getDeclaredFields();
+		System.out.println("The field(s) of this class: ");
 		for (int i = 0; i < fieldList.length; i++) {
+			//get each field name
+			int k = i + 1;
 			String fieldName = fieldList[i].getName();
+			System.out.println(k + ") Name: " + fieldName);
+
+			//get type of field of each field
+			Class typeClass = fieldList[i].getType();
+			String fieldType = typeClass.getName();
+			System.out.print("   Type: " + fieldType);
+			System.out.println();
 			
+			//test modifiers of each field
+			int mod = fieldList[i].getModifiers();
+			testModifiers(mod);
+			System.out.println();
+		}
+	}
+
+	
+	public void printList(Class[] c) {
+		for(int j = 0; j < c.length; j++) {
+			String name = c[j].getName();
+			System.out.print(name + "  ");
 		}
 	}
 
 	//method that checks each modifier and if true, will print
 	public void testModifiers(int mod) {
-		if(Modifier.isAbstact(mod))
+		System.out.print("   Modifiers: ");
+		if(Modifier.isAbstract(mod))
 			System.out.print("Abstract ");
 		if(Modifier.isFinal(mod))
 			System.out.print("Final ");
@@ -150,6 +175,5 @@ public class Inspector {
 		if(Modifier.isVolatile(mod))
 			System.out.println("Volatile ");
 	}
-*/
 
 }
