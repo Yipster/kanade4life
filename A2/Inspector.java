@@ -13,6 +13,7 @@ import java.util.*;
 
 public class Inspector {
 
+	Object currentObject;
 	Class currentClass;
 	public static List<Class> seen = new ArrayList<Class>();
 
@@ -34,6 +35,7 @@ public class Inspector {
 
 	
 	public void inspector(Object obj) {
+		currentObject = obj;
 		//1) Get name of declaring class
 		System.out.println("Class Name: " + obj.getClass().getName());
 		
@@ -90,29 +92,30 @@ public class Inspector {
 		System.out.println("The method(s) the class declares:");
 		Method[] methodList = currentClass.getDeclaredMethods();
 		for (int i = 0; i < methodList.length; i++) {
+			Method m = methodList[i];
 			//get method name and print
 			int k = i + 1;
-			String methodName = methodList[i].getName();
+			String methodName = m.getName();
 			System.out.println(k + ") Name: " + methodName);
 			
 			//get parameter types of the specified method and print
-			Class[] parameterTypes = methodList[i].getParameterTypes();
+			Class[] parameterTypes = m.getParameterTypes();
 			System.out.print("   Parameter Types: ");
 			printList(parameterTypes);
 			System.out.println();
 
 			//get exception types of the specified method and print			
-			Class[] exceptionTypes = methodList[i].getExceptionTypes();
+			Class[] exceptionTypes = m.getExceptionTypes();
 			System.out.print("   Exception Types: ");
 			printList(exceptionTypes);
 			System.out.println();
 
 			//get the method's modifiers and print
-			int mod = methodList[i].getModifiers();
+			int mod = m.getModifiers();
 			testModifiers(mod);
 
 			//get return type and print
-			String returnType = methodList[i].getReturnType().getName();
+			String returnType = m.getReturnType().getName();
 			System.out.println("   Return Type: " + returnType);
 			System.out.println();
 		}
@@ -147,21 +150,47 @@ public class Inspector {
 		Field[] fieldList = currentClass.getDeclaredFields();
 		System.out.println("The field(s) of this class: ");
 		for (int i = 0; i < fieldList.length; i++) {
+			Field f = fieldList[i];
+			f.setAccessible(true);
 			//get each field name
 			int k = i + 1;
-			String fieldName = fieldList[i].getName();
+			String fieldName = f.getName();
 			System.out.println(k + ") Name: " + fieldName);
 
 			//get type of field of each field
-			Class typeClass = fieldList[i].getType();
-			String fieldType = typeClass.getName();
-			System.out.print("   Type: " + fieldType);
+			Class typeClass = f.getType();
+			System.out.print("   Type: ");
+			/*if(!typeClass.isPrimitive() ) {
+				try {
+					System.out.print("("+ value.toString() +" = " +System.identityHashCode(value) + ")");
+				}
+				catch (Exception e) {
+					System.out.println("Error in printing type");
+				}
+				
+			}
+			else {*/
+				String fieldType = typeClass.getName();
+				System.out.print(fieldType);
 			System.out.println();
 			
 			//test modifiers of each field
 			int mod = fieldList[i].getModifiers();
 			testModifiers(mod);
-			System.out.println();
+			//System.out.println();
+			
+			//get value of the field
+			try {
+				Object value = f.get(currentObject);
+				if(typeClass.isPrimitive()) 
+					System.out.println("   Value: " + value.toString());
+				else
+					System.out.println("   Pointer Value: " + System.identityHashCode(value));
+				System.out.println();
+			}
+			catch (Exception e) {
+				System.out.println("Error in printing value of field");
+			}
 		}
 	}
 
