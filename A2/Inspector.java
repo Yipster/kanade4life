@@ -14,13 +14,26 @@ import java.util.*;
 public class Inspector {
 
 	Class currentClass;
-
+	public static List<Class> seen = new ArrayList<Class>();
 
 	/*
 	inspects an object that is given and a boolean that asks if it should be recursive or not
 	*/
 	public void inspect(Object obj, boolean recursive) {
-		
+	
+		inspector(obj);
+		/*
+		if(!recursive)
+			inspector(obj);
+		else {
+			//do something
+			recursiveInspector(obj);
+		}*/
+	}
+
+
+	
+	public void inspector(Object obj) {
 		//1) Get name of declaring class
 		System.out.println("Class Name: " + obj.getClass().getName());
 		
@@ -43,8 +56,21 @@ public class Inspector {
 		//6) Fields that the class has
 		inspectFields();
 	}
-
-
+	
+	
+	/*
+	
+	public void recursiveInspector(Object obj) {
+		List<Class> neighbors = new ArrayList<Class>();
+		seen.add(obj.getClass());
+		
+		
+		
+	}*/
+	
+	
+	
+	
 
 	//method that inspects the interfaces of the object 
 	public void inspectInterfaces() {
@@ -157,23 +183,24 @@ public class Inspector {
 		if(Modifier.isInterface(mod))
 			System.out.print("Interface ");
 		if(Modifier.isNative(mod))
-			System.out.println("Native ");
+			System.out.print("Native ");
 		if(Modifier.isPrivate(mod))
-			System.out.println("Private ");
+			System.out.print("Private ");
 		if(Modifier.isProtected(mod))
-			System.out.println("Protected ");
+			System.out.print("Protected ");
 		if(Modifier.isPublic(mod))
-			System.out.println("Public ");
+			System.out.print("Public ");
 		if(Modifier.isStatic(mod))
-			System.out.println("Static ");
+			System.out.print("Static ");
 		if(Modifier.isStrict(mod))
-			System.out.println("Strict ");
+			System.out.print("Strict ");
 		if(Modifier.isSynchronized(mod))
-			System.out.println("Synchronized ");
+			System.out.print("Synchronized ");
 		if(Modifier.isTransient(mod))
-			System.out.println("Transient ");
+			System.out.print("Transient ");
 		if(Modifier.isVolatile(mod))
-			System.out.println("Volatile ");
+			System.out.print("Volatile ");
+		System.out.println();
 	}
 
 }
