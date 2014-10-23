@@ -158,42 +158,120 @@ public class Inspector {
 			System.out.println(k + ") Name: " + fieldName);
 
 			//get type of field of each field
-			Class typeClass = f.getType();
-			System.out.print("   Type: ");
-			/*if(!typeClass.isPrimitive() ) {
-				try {
-					System.out.print("("+ value.toString() +" = " +System.identityHashCode(value) + ")");
-				}
-				catch (Exception e) {
-					System.out.println("Error in printing type");
-				}
-				
-			}
-			else {*/
-				String fieldType = typeClass.getName();
-				System.out.print(fieldType);
-			System.out.println();
-			
-			//test modifiers of each field
-			int mod = fieldList[i].getModifiers();
-			testModifiers(mod);
-			//System.out.println();
-			
 			//get value of the field
 			try {
 				Object value = f.get(currentObject);
-				if(typeClass.isPrimitive()) 
-					System.out.println("   Value: " + value.toString());
-				else
-					System.out.println("   Pointer Value: " + System.identityHashCode(value));
+				//handles normal primitives
+				if(typeClass.isPrimitive()) {
+					System.out.println("   Type: " + typeClass.getName());
+					System.out.print("   Value: " + value.toString());
+				}
+				//handles arrays
+				else if(value.getClass().isArray()) {
+					fieldArrays(value);
+				}
+				//handles objects
+				else {
+					System.out.println("   Type: " + typeClass.getName());
+					System.out.print("   Pointer Value: " + System.identityHashCode(value));
+				}
 				System.out.println();
 			}
 			catch (Exception e) {
 				System.out.println("Error in printing value of field");
 			}
+			
+			//test modifiers of each field
+			int mod = fieldList[i].getModifiers();
+			testModifiers(mod);
+			System.out.println();
 		}
 	}
 
+	
+	public void fieldArrays(Object object) {
+		if (object.getClass().isArray()) {
+			Class<?> componentType;
+			componentType = object.getClass().getComponentType();
+			if (componentType.isPrimitive()) {
+				if (boolean.class.isAssignableFrom(componentType)) {
+					System.out.println("   Type: boolean[]");
+					System.out.print("   Value: [");
+					for (boolean anElement : (boolean[]) object) {
+						System.out.print(anElement + ", ");
+					}
+					System.out.print("]");
+				}
+				
+				else if (byte.class.isAssignableFrom(componentType)) {
+					System.out.println("   Type: byte[]");
+					System.out.print("   Value: [");
+					for(byte anElement : (byte[]) object) {
+						System.out.print(anElement + ", ");
+					}
+					System.out.print("]");
+				}
+
+				else if (char.class.isAssignableFrom(componentType)) {
+					System.out.println("   Type: char[]");
+					System.out.print("   Value: [");
+					for(char anElement : (char[]) object) {
+						System.out.print(anElement + ", ");
+					}
+					System.out.print("]");
+				}
+
+				else if (double.class.isAssignableFrom(componentType)) {
+					System.out.println("   Type: double[]");
+					System.out.print("   Value: [");
+					for(double anElement : (double[]) object) {
+						System.out.print(anElement + ", ");
+					}
+					System.out.print("]");
+				}
+
+				else if (float.class.isAssignableFrom(componentType)) {
+					System.out.println("   Type: float[]");
+					System.out.print("   Value: [");
+					for(float anElement : (float[]) object) {
+						System.out.print(anElement + ", ");
+					}
+					System.out.print("]");
+				}
+
+				else if (int.class.isAssignableFrom(componentType)) {
+					System.out.println("   Type: int[]");
+					System.out.print("   Value: [");
+					for (int anElement : (int[]) object) {
+						System.out.print(anElement + ", ");
+					}
+					System.out.print("]");
+				}
+
+				else if (long.class.isAssignableFrom(componentType)) {
+					System.out.println("   Type: long[]");
+					System.out.print("   Value: [");
+					for (long anElement : (long[]) object) {
+						System.out.print(anElement + ", ");
+					}
+					System.out.print("]");
+				}
+
+				else if (short.class.isAssignableFrom(componentType)) {
+					System.out.println("   Type: short[]");
+					System.out.print("   Value: [");
+					for (short anElement : (short[]) object) {
+						System.out.print(anElement + ", ");
+					}
+					System.out.print("]");
+				}
+			}
+
+			else {
+				/* Do something with Object[] here. */
+			}
+		}
+	}
 	
 	public void printList(Class[] c) {
 		for(int j = 0; j < c.length; j++) {
