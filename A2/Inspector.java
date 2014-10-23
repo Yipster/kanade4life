@@ -4,6 +4,11 @@ CPSC 501: Advanced Programming Technique
 Assignment 2
 
 This is the a class called Inspector that contains a method named inspect.
+inspect @params
+- Object: obj				an object to inspect
+- boolean: recursive		if set true, it will continue up the hierarchy to recursively inspect objects
+
+inspect specifically inspects
 
 */
 
@@ -15,21 +20,29 @@ public class Inspector {
 
 	Object currentObject;
 	Class currentClass;
+	Class superClass;
+	boolean end;
 	public static List<Class> seen = new ArrayList<Class>();
-
+	
 	/*
 	inspects an object that is given and a boolean that asks if it should be recursive or not
 	*/
 	public void inspect(Object obj, boolean recursive) {
 	
 		inspector(obj);
-		/*
-		if(!recursive)
-			inspector(obj);
-		else {
-			//do something
-			recursiveInspector(obj);
-		}*/
+		
+		if(recursive) {
+			end = false;
+			while(superClass != null && end == false){
+				try {
+					inspector(obj);
+				}
+				catch (Exception e) {
+					System.out.println("Cannot make object of this class");
+					end = true;
+				}
+			}
+		}
 	}
 
 
@@ -37,38 +50,41 @@ public class Inspector {
 	public void inspector(Object obj) {
 		currentObject = obj;
 		//1) Get name of declaring class
+		System.out.println("========================================================================");
 		System.out.println("Class Name: " + obj.getClass().getName());
 		
 		//2) Get name of immediate superclass
 		currentClass = obj.getClass();
-		Class superclass = currentClass.getSuperclass();
-		String className = superclass.getName();
-		System.out.println("Direct Superclass Name: " + className);
+		superClass = currentClass.getSuperclass();
+		if(superClass!= null) {
+			String className = superClass.getName();
+			System.out.println("Superclass Name: " + className);
+		}
+		else {
+			System.out.println("Superclass Name: null");
+		}
 		System.out.println();
-
+		System.out.println("--------------------------------------");
+		
 		//3) Name of interfaces that the class implements
 		inspectInterfaces();
-
+		System.out.println("--------------------------------------");
+		
 		//4) Methods that the class declares. 
 		inspectMethods();
+		System.out.println("--------------------------------------");
 		
 		//5) Constructor(s) that the class has
 		inspectConstructors();
+		System.out.println("--------------------------------------");
 		
 		//6) Fields that the class has
 		inspectFields();
+		System.out.println("--------------------------------------");
+		System.out.println("========================================================================");
 	}
 	
 	
-	/*
-	
-	public void recursiveInspector(Object obj) {
-		List<Class> neighbors = new ArrayList<Class>();
-		seen.add(obj.getClass());
-		
-		
-		
-	}*/
 	
 	
 	
@@ -159,6 +175,7 @@ public class Inspector {
 
 			//get type of field of each field
 			//get value of the field
+			Class typeClass = f.getType();
 			try {
 				Object value = f.get(currentObject);
 				//handles normal primitives
@@ -268,7 +285,18 @@ public class Inspector {
 			}
 
 			else {
-				/* Do something with Object[] here. */
+				//handle Object[]
+				
+				System.out.println("   Type: " + componentType.getName());
+				System.out.print("   Value: [");
+				for(Object anElement : (Object[]) object) {
+					System.out.print(System.identityHashCode(anElement) + ", ");
+				}
+				System.out.print("]");
+				
+				/*if(recursive) {
+					//recursive functionality. 
+				}*/
 			}
 		}
 	}
