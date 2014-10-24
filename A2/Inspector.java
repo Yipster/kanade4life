@@ -28,9 +28,9 @@ public class Inspector {
 	inspects an object that is given and a boolean that asks if it should be recursive or not
 	*/
 	public void inspect(Object obj, boolean recursive) {
-	
-		inspector(obj);
-		
+		Class c = obj.getClass();
+		inspector(obj,c);
+		/*
 		if(recursive) {
 			end = false;
 			while(superClass != null && end == false){
@@ -42,27 +42,22 @@ public class Inspector {
 					end = true;
 				}
 			}
-		}
+		}*/
 	}
 
 
 	
-	public void inspector(Object obj) {
+	public void inspector(Object obj, Class classObject) {
+		currentClass = classObject;
 		currentObject = obj;
+		
 		//1) Get name of declaring class
 		System.out.println("========================================================================");
-		System.out.println("Class Name: " + obj.getClass().getName());
+		System.out.println("Class Name: " + currentClass.getName());
 		
 		//2) Get name of immediate superclass
-		currentClass = obj.getClass();
-		superClass = currentClass.getSuperclass();
-		if(superClass!= null) {
-			String className = superClass.getName();
-			System.out.println("Superclass Name: " + className);
-		}
-		else {
-			System.out.println("Superclass Name: null");
-		}
+		inspectSuperClass();
+		
 		System.out.println();
 		System.out.println("--------------------------------------");
 		
@@ -82,11 +77,24 @@ public class Inspector {
 		inspectFields();
 		System.out.println("--------------------------------------");
 		System.out.println("========================================================================");
+		
+		if(currentClass.getSuperclass() != null) {
+			inspector(obj, currentClass.getSuperclass());
+		}
 	}
 	
 	
-	
-	
+	//method that inspects the super class of the current object.
+	public void inspectSuperClass() {
+		superClass = currentClass.getSuperclass();
+		if(superClass!= null) {
+			String className = superClass.getName();
+			System.out.println("Superclass Name: " + className);
+		}
+		else {
+			System.out.println("Superclass Name: null");
+		}
+	}
 	
 	
 
