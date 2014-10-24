@@ -1,0 +1,3434 @@
+Running Test: ClassA
+========================================================================
+Class Name: ClassA
+Superclass Name: java.lang.Object
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+java.io.Serializable  java.lang.Runnable  
+
+--------------------------------------
+The method(s) the class declares:
+1) Name: run
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: void
+
+2) Name: toString
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.lang.String
+
+3) Name: setVal
+   Parameter Types: int  
+   Exception Types: java.lang.Exception  
+   Modifiers: Public 
+   Return Type: void
+
+4) Name: getVal
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: int
+
+5) Name: printSomething
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Private 
+   Return Type: void
+
+--------------------------------------
+The constructor(s) in ClassA:
+ 1) Parameters: 
+     Modifiers: Public 
+
+ 2) Parameters: int  
+     Modifiers: Public 
+
+--------------------------------------
+The field(s) of this class: 
+1) Name: val
+   Type: int
+   Value: 3
+   Modifiers: Private 
+
+2) Name: val2
+   Type: double
+   Value: 0.2
+   Modifiers: Private 
+
+3) Name: val3
+   Type: boolean
+   Value: true
+   Modifiers: Private 
+
+--------------------------------------
+========================================================================
+========================================================================
+Class Name: java.lang.Runnable
+Superclass Name: null
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+
+
+--------------------------------------
+The method(s) the class declares:
+1) Name: run
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Abstract Public 
+   Return Type: void
+
+--------------------------------------
+The constructor(s) in java.lang.Runnable:
+--------------------------------------
+The field(s) of this class: 
+--------------------------------------
+========================================================================
+========================================================================
+Class Name: java.io.Serializable
+Superclass Name: null
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+
+
+--------------------------------------
+The method(s) the class declares:
+--------------------------------------
+The constructor(s) in java.io.Serializable:
+--------------------------------------
+The field(s) of this class: 
+--------------------------------------
+========================================================================
+========================================================================
+Class Name: java.lang.Object
+Superclass Name: null
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+
+
+--------------------------------------
+The method(s) the class declares:
+1) Name: finalize
+   Parameter Types: 
+   Exception Types: java.lang.Throwable  
+   Modifiers: Protected 
+   Return Type: void
+
+2) Name: wait
+   Parameter Types: 
+   Exception Types: java.lang.InterruptedException  
+   Modifiers: Final Public 
+   Return Type: void
+
+3) Name: wait
+   Parameter Types: long  int  
+   Exception Types: java.lang.InterruptedException  
+   Modifiers: Final Public 
+   Return Type: void
+
+4) Name: wait
+   Parameter Types: long  
+   Exception Types: java.lang.InterruptedException  
+   Modifiers: Final Native Public 
+   Return Type: void
+
+5) Name: equals
+   Parameter Types: java.lang.Object  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: boolean
+
+6) Name: toString
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.lang.String
+
+7) Name: hashCode
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Native Public 
+   Return Type: int
+
+8) Name: getClass
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Final Native Public 
+   Return Type: java.lang.Class
+
+9) Name: clone
+   Parameter Types: 
+   Exception Types: java.lang.CloneNotSupportedException  
+   Modifiers: Native Protected 
+   Return Type: java.lang.Object
+
+10) Name: notify
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Final Native Public 
+   Return Type: void
+
+11) Name: notifyAll
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Final Native Public 
+   Return Type: void
+
+12) Name: registerNatives
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Native Private Static 
+   Return Type: void
+
+--------------------------------------
+The constructor(s) in java.lang.Object:
+ 1) Parameters: 
+     Modifiers: Public 
+
+--------------------------------------
+The field(s) of this class: 
+--------------------------------------
+========================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Running Test: ClassA
+========================================================================
+Class Name: ClassA
+Superclass Name: java.lang.Object
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+java.io.Serializable  java.lang.Runnable  
+
+--------------------------------------
+The method(s) the class declares:
+1) Name: run
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: void
+
+2) Name: toString
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.lang.String
+
+3) Name: setVal
+   Parameter Types: int  
+   Exception Types: java.lang.Exception  
+   Modifiers: Public 
+   Return Type: void
+
+4) Name: getVal
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: int
+
+5) Name: printSomething
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Private 
+   Return Type: void
+
+--------------------------------------
+The constructor(s) in ClassA:
+ 1) Parameters: 
+     Modifiers: Public 
+
+ 2) Parameters: int  
+     Modifiers: Public 
+
+--------------------------------------
+The field(s) of this class: 
+1) Name: val
+   Type: int
+   Value: 12
+   Modifiers: Private 
+
+2) Name: val2
+   Type: double
+   Value: 0.2
+   Modifiers: Private 
+
+3) Name: val3
+   Type: boolean
+   Value: true
+   Modifiers: Private 
+
+--------------------------------------
+========================================================================
+========================================================================
+Class Name: java.lang.Runnable
+Superclass Name: null
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+
+
+--------------------------------------
+The method(s) the class declares:
+1) Name: run
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Abstract Public 
+   Return Type: void
+
+--------------------------------------
+The constructor(s) in java.lang.Runnable:
+--------------------------------------
+The field(s) of this class: 
+--------------------------------------
+========================================================================
+========================================================================
+Class Name: java.io.Serializable
+Superclass Name: null
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+
+
+--------------------------------------
+The method(s) the class declares:
+--------------------------------------
+The constructor(s) in java.io.Serializable:
+--------------------------------------
+The field(s) of this class: 
+--------------------------------------
+========================================================================
+========================================================================
+Class Name: java.lang.Object
+Superclass Name: null
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+
+
+--------------------------------------
+The method(s) the class declares:
+1) Name: finalize
+   Parameter Types: 
+   Exception Types: java.lang.Throwable  
+   Modifiers: Protected 
+   Return Type: void
+
+2) Name: wait
+   Parameter Types: 
+   Exception Types: java.lang.InterruptedException  
+   Modifiers: Final Public 
+   Return Type: void
+
+3) Name: wait
+   Parameter Types: long  int  
+   Exception Types: java.lang.InterruptedException  
+   Modifiers: Final Public 
+   Return Type: void
+
+4) Name: wait
+   Parameter Types: long  
+   Exception Types: java.lang.InterruptedException  
+   Modifiers: Final Native Public 
+   Return Type: void
+
+5) Name: equals
+   Parameter Types: java.lang.Object  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: boolean
+
+6) Name: toString
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.lang.String
+
+7) Name: hashCode
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Native Public 
+   Return Type: int
+
+8) Name: getClass
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Final Native Public 
+   Return Type: java.lang.Class
+
+9) Name: clone
+   Parameter Types: 
+   Exception Types: java.lang.CloneNotSupportedException  
+   Modifiers: Native Protected 
+   Return Type: java.lang.Object
+
+10) Name: notify
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Final Native Public 
+   Return Type: void
+
+11) Name: notifyAll
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Final Native Public 
+   Return Type: void
+
+12) Name: registerNatives
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Native Private Static 
+   Return Type: void
+
+--------------------------------------
+The constructor(s) in java.lang.Object:
+ 1) Parameters: 
+     Modifiers: Public 
+
+--------------------------------------
+The field(s) of this class: 
+--------------------------------------
+========================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Running Test: ClassB
+========================================================================
+Class Name: ClassB
+Superclass Name: ClassC
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+java.lang.Runnable  
+
+--------------------------------------
+The method(s) the class declares:
+1) Name: run
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: void
+
+2) Name: toString
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.lang.String
+
+3) Name: func3
+   Parameter Types: int  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: void
+
+--------------------------------------
+The constructor(s) in ClassB:
+ 1) Parameters: 
+     Modifiers: Public 
+
+--------------------------------------
+The field(s) of this class: 
+1) Name: val
+   Type: ClassA
+   Pointer Value: 2101973421
+   Modifiers: Private 
+
+2) Name: val2
+   Type: ClassA
+   Pointer Value: 685325104
+   Modifiers: Private 
+
+3) Name: val3
+Error in printing value of field
+   Modifiers: Private 
+
+--------------------------------------
+========================================================================
+========================================================================
+Class Name: ClassA
+Superclass Name: java.lang.Object
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+java.io.Serializable  java.lang.Runnable  
+
+--------------------------------------
+The method(s) the class declares:
+1) Name: run
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: void
+
+2) Name: toString
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.lang.String
+
+3) Name: setVal
+   Parameter Types: int  
+   Exception Types: java.lang.Exception  
+   Modifiers: Public 
+   Return Type: void
+
+4) Name: getVal
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: int
+
+5) Name: printSomething
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Private 
+   Return Type: void
+
+--------------------------------------
+The constructor(s) in ClassA:
+ 1) Parameters: 
+     Modifiers: Public 
+
+ 2) Parameters: int  
+     Modifiers: Public 
+
+--------------------------------------
+The field(s) of this class: 
+1) Name: val
+Error in printing value of field
+   Modifiers: Private 
+
+2) Name: val2
+Error in printing value of field
+   Modifiers: Private 
+
+3) Name: val3
+Error in printing value of field
+   Modifiers: Private 
+
+--------------------------------------
+========================================================================
+========================================================================
+Class Name: java.lang.Runnable
+Superclass Name: null
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+
+
+--------------------------------------
+The method(s) the class declares:
+1) Name: run
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Abstract Public 
+   Return Type: void
+
+--------------------------------------
+The constructor(s) in java.lang.Runnable:
+--------------------------------------
+The field(s) of this class: 
+--------------------------------------
+========================================================================
+========================================================================
+Class Name: java.io.Serializable
+Superclass Name: null
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+
+
+--------------------------------------
+The method(s) the class declares:
+--------------------------------------
+The constructor(s) in java.io.Serializable:
+--------------------------------------
+The field(s) of this class: 
+--------------------------------------
+========================================================================
+========================================================================
+Class Name: java.lang.Object
+Superclass Name: null
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+
+
+--------------------------------------
+The method(s) the class declares:
+1) Name: finalize
+   Parameter Types: 
+   Exception Types: java.lang.Throwable  
+   Modifiers: Protected 
+   Return Type: void
+
+2) Name: wait
+   Parameter Types: 
+   Exception Types: java.lang.InterruptedException  
+   Modifiers: Final Public 
+   Return Type: void
+
+3) Name: wait
+   Parameter Types: long  int  
+   Exception Types: java.lang.InterruptedException  
+   Modifiers: Final Public 
+   Return Type: void
+
+4) Name: wait
+   Parameter Types: long  
+   Exception Types: java.lang.InterruptedException  
+   Modifiers: Final Native Public 
+   Return Type: void
+
+5) Name: equals
+   Parameter Types: java.lang.Object  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: boolean
+
+6) Name: toString
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.lang.String
+
+7) Name: hashCode
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Native Public 
+   Return Type: int
+
+8) Name: getClass
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Final Native Public 
+   Return Type: java.lang.Class
+
+9) Name: clone
+   Parameter Types: 
+   Exception Types: java.lang.CloneNotSupportedException  
+   Modifiers: Native Protected 
+   Return Type: java.lang.Object
+
+10) Name: notify
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Final Native Public 
+   Return Type: void
+
+11) Name: notifyAll
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Final Native Public 
+   Return Type: void
+
+12) Name: registerNatives
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Native Private Static 
+   Return Type: void
+
+--------------------------------------
+The constructor(s) in java.lang.Object:
+ 1) Parameters: 
+     Modifiers: Public 
+
+--------------------------------------
+The field(s) of this class: 
+--------------------------------------
+========================================================================
+========================================================================
+Class Name: ClassA
+Superclass Name: java.lang.Object
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+java.io.Serializable  java.lang.Runnable  
+
+--------------------------------------
+The method(s) the class declares:
+1) Name: run
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: void
+
+2) Name: toString
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.lang.String
+
+3) Name: setVal
+   Parameter Types: int  
+   Exception Types: java.lang.Exception  
+   Modifiers: Public 
+   Return Type: void
+
+4) Name: getVal
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: int
+
+5) Name: printSomething
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Private 
+   Return Type: void
+
+--------------------------------------
+The constructor(s) in ClassA:
+ 1) Parameters: 
+     Modifiers: Public 
+
+ 2) Parameters: int  
+     Modifiers: Public 
+
+--------------------------------------
+The field(s) of this class: 
+1) Name: val
+Error in printing value of field
+   Modifiers: Private 
+
+2) Name: val2
+Error in printing value of field
+   Modifiers: Private 
+
+3) Name: val3
+Error in printing value of field
+   Modifiers: Private 
+
+--------------------------------------
+========================================================================
+========================================================================
+Class Name: java.lang.Runnable
+Superclass Name: null
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+
+
+--------------------------------------
+The method(s) the class declares:
+1) Name: run
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Abstract Public 
+   Return Type: void
+
+--------------------------------------
+The constructor(s) in java.lang.Runnable:
+--------------------------------------
+The field(s) of this class: 
+--------------------------------------
+========================================================================
+========================================================================
+Class Name: ClassC
+Superclass Name: ClassD
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+InterfaceA  
+
+--------------------------------------
+The method(s) the class declares:
+1) Name: run
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: void
+
+2) Name: toString
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.lang.String
+
+3) Name: func3
+   Parameter Types: int  
+   Exception Types: 
+   Modifiers: Abstract Public 
+   Return Type: void
+
+4) Name: func0
+   Parameter Types: int  boolean  
+   Exception Types: java.lang.Exception  
+   Modifiers: Public 
+   Return Type: void
+
+5) Name: func1
+   Parameter Types: int  double  boolean  java.lang.String  
+   Exception Types: java.lang.Exception  
+   Modifiers: Public 
+   Return Type: void
+
+6) Name: func2
+   Parameter Types: java.lang.String  
+   Exception Types: java.lang.Exception  java.lang.ArithmeticException  java.lang.IllegalMonitorStateException  
+   Modifiers: Public 
+   Return Type: int
+
+--------------------------------------
+The constructor(s) in ClassC:
+ 1) Parameters: 
+     Modifiers: Public 
+
+ 2) Parameters: int  int  
+     Modifiers: Public 
+
+--------------------------------------
+The field(s) of this class: 
+1) Name: val2
+   Type: ClassA
+   Pointer Value: 1163157884
+   Modifiers: Private 
+
+2) Name: val3
+   Type: ClassA
+   Pointer Value: 1956725890
+   Modifiers: Private 
+
+3) Name: val4
+   Type: ClassA
+   Pointer Value: 356573597
+   Modifiers: Private 
+
+--------------------------------------
+========================================================================
+========================================================================
+Class Name: ClassA
+Superclass Name: java.lang.Object
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+java.io.Serializable  java.lang.Runnable  
+
+--------------------------------------
+The method(s) the class declares:
+1) Name: run
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: void
+
+2) Name: toString
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.lang.String
+
+3) Name: setVal
+   Parameter Types: int  
+   Exception Types: java.lang.Exception  
+   Modifiers: Public 
+   Return Type: void
+
+4) Name: getVal
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: int
+
+5) Name: printSomething
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Private 
+   Return Type: void
+
+--------------------------------------
+The constructor(s) in ClassA:
+ 1) Parameters: 
+     Modifiers: Public 
+
+ 2) Parameters: int  
+     Modifiers: Public 
+
+--------------------------------------
+The field(s) of this class: 
+1) Name: val
+Error in printing value of field
+   Modifiers: Private 
+
+2) Name: val2
+Error in printing value of field
+   Modifiers: Private 
+
+3) Name: val3
+Error in printing value of field
+   Modifiers: Private 
+
+--------------------------------------
+========================================================================
+========================================================================
+Class Name: ClassA
+Superclass Name: java.lang.Object
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+java.io.Serializable  java.lang.Runnable  
+
+--------------------------------------
+The method(s) the class declares:
+1) Name: run
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: void
+
+2) Name: toString
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.lang.String
+
+3) Name: setVal
+   Parameter Types: int  
+   Exception Types: java.lang.Exception  
+   Modifiers: Public 
+   Return Type: void
+
+4) Name: getVal
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: int
+
+5) Name: printSomething
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Private 
+   Return Type: void
+
+--------------------------------------
+The constructor(s) in ClassA:
+ 1) Parameters: 
+     Modifiers: Public 
+
+ 2) Parameters: int  
+     Modifiers: Public 
+
+--------------------------------------
+The field(s) of this class: 
+1) Name: val
+Error in printing value of field
+   Modifiers: Private 
+
+2) Name: val2
+Error in printing value of field
+   Modifiers: Private 
+
+3) Name: val3
+Error in printing value of field
+   Modifiers: Private 
+
+--------------------------------------
+========================================================================
+========================================================================
+Class Name: ClassA
+Superclass Name: java.lang.Object
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+java.io.Serializable  java.lang.Runnable  
+
+--------------------------------------
+The method(s) the class declares:
+1) Name: run
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: void
+
+2) Name: toString
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.lang.String
+
+3) Name: setVal
+   Parameter Types: int  
+   Exception Types: java.lang.Exception  
+   Modifiers: Public 
+   Return Type: void
+
+4) Name: getVal
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: int
+
+5) Name: printSomething
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Private 
+   Return Type: void
+
+--------------------------------------
+The constructor(s) in ClassA:
+ 1) Parameters: 
+     Modifiers: Public 
+
+ 2) Parameters: int  
+     Modifiers: Public 
+
+--------------------------------------
+The field(s) of this class: 
+1) Name: val
+Error in printing value of field
+   Modifiers: Private 
+
+2) Name: val2
+Error in printing value of field
+   Modifiers: Private 
+
+3) Name: val3
+Error in printing value of field
+   Modifiers: Private 
+
+--------------------------------------
+========================================================================
+========================================================================
+Class Name: InterfaceA
+Superclass Name: null
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+InterfaceB  
+
+--------------------------------------
+The method(s) the class declares:
+1) Name: func1
+   Parameter Types: int  double  boolean  java.lang.String  
+   Exception Types: java.lang.Exception  
+   Modifiers: Abstract Public 
+   Return Type: void
+
+2) Name: func2
+   Parameter Types: java.lang.String  
+   Exception Types: java.lang.Exception  java.lang.ArithmeticException  java.lang.IllegalMonitorStateException  
+   Modifiers: Abstract Public 
+   Return Type: int
+
+--------------------------------------
+The constructor(s) in InterfaceA:
+--------------------------------------
+The field(s) of this class: 
+--------------------------------------
+========================================================================
+========================================================================
+Class Name: InterfaceB
+Superclass Name: null
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+
+
+--------------------------------------
+The method(s) the class declares:
+1) Name: func0
+   Parameter Types: int  boolean  
+   Exception Types: java.lang.Exception  
+   Modifiers: Abstract Public 
+   Return Type: void
+
+--------------------------------------
+The constructor(s) in InterfaceB:
+--------------------------------------
+The field(s) of this class: 
+--------------------------------------
+========================================================================
+========================================================================
+Class Name: ClassD
+Superclass Name: java.lang.Object
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+
+
+--------------------------------------
+The method(s) the class declares:
+1) Name: toString
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.lang.String
+
+2) Name: getVal3
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: int
+
+--------------------------------------
+The constructor(s) in ClassD:
+ 1) Parameters: 
+     Modifiers: Public 
+
+ 2) Parameters: int  
+     Modifiers: Public 
+
+--------------------------------------
+The field(s) of this class: 
+1) Name: val
+   Type: ClassA
+   Pointer Value: 1836019240
+   Modifiers: Private 
+
+2) Name: val2
+Error in printing value of field
+   Modifiers: Private Static 
+
+3) Name: val3
+   Type: int
+   Value: 34
+   Modifiers: Private 
+
+4) Name: vallarray
+   Type: ClassA
+   Value: [0, Error in printing value of field
+   Modifiers: Private 
+
+--------------------------------------
+========================================================================
+========================================================================
+Class Name: ClassA
+Superclass Name: java.lang.Object
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+java.io.Serializable  java.lang.Runnable  
+
+--------------------------------------
+The method(s) the class declares:
+1) Name: run
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: void
+
+2) Name: toString
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.lang.String
+
+3) Name: setVal
+   Parameter Types: int  
+   Exception Types: java.lang.Exception  
+   Modifiers: Public 
+   Return Type: void
+
+4) Name: getVal
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: int
+
+5) Name: printSomething
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Private 
+   Return Type: void
+
+--------------------------------------
+The constructor(s) in ClassA:
+ 1) Parameters: 
+     Modifiers: Public 
+
+ 2) Parameters: int  
+     Modifiers: Public 
+
+--------------------------------------
+The field(s) of this class: 
+1) Name: val
+Error in printing value of field
+   Modifiers: Private 
+
+2) Name: val2
+Error in printing value of field
+   Modifiers: Private 
+
+3) Name: val3
+Error in printing value of field
+   Modifiers: Private 
+
+--------------------------------------
+========================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Running Test: Class D
+========================================================================
+Class Name: ClassD
+Superclass Name: java.lang.Object
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+
+
+--------------------------------------
+The method(s) the class declares:
+1) Name: toString
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.lang.String
+
+2) Name: getVal3
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: int
+
+--------------------------------------
+The constructor(s) in ClassD:
+ 1) Parameters: 
+     Modifiers: Public 
+
+ 2) Parameters: int  
+     Modifiers: Public 
+
+--------------------------------------
+The field(s) of this class: 
+1) Name: val
+   Type: ClassA
+   Pointer Value: 1173230247
+   Modifiers: Private 
+
+2) Name: val2
+Error in printing value of field
+   Modifiers: Private Static 
+
+3) Name: val3
+   Type: int
+   Value: 32
+   Modifiers: Private 
+
+4) Name: vallarray
+   Type: ClassA
+   Value: [0, Error in printing value of field
+   Modifiers: Private 
+
+--------------------------------------
+========================================================================
+========================================================================
+Class Name: ClassA
+Superclass Name: java.lang.Object
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+java.io.Serializable  java.lang.Runnable  
+
+--------------------------------------
+The method(s) the class declares:
+1) Name: run
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: void
+
+2) Name: toString
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.lang.String
+
+3) Name: setVal
+   Parameter Types: int  
+   Exception Types: java.lang.Exception  
+   Modifiers: Public 
+   Return Type: void
+
+4) Name: getVal
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: int
+
+5) Name: printSomething
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Private 
+   Return Type: void
+
+--------------------------------------
+The constructor(s) in ClassA:
+ 1) Parameters: 
+     Modifiers: Public 
+
+ 2) Parameters: int  
+     Modifiers: Public 
+
+--------------------------------------
+The field(s) of this class: 
+1) Name: val
+Error in printing value of field
+   Modifiers: Private 
+
+2) Name: val2
+Error in printing value of field
+   Modifiers: Private 
+
+3) Name: val3
+Error in printing value of field
+   Modifiers: Private 
+
+--------------------------------------
+========================================================================
+========================================================================
+Class Name: java.lang.Runnable
+Superclass Name: null
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+
+
+--------------------------------------
+The method(s) the class declares:
+1) Name: run
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Abstract Public 
+   Return Type: void
+
+--------------------------------------
+The constructor(s) in java.lang.Runnable:
+--------------------------------------
+The field(s) of this class: 
+--------------------------------------
+========================================================================
+========================================================================
+Class Name: java.io.Serializable
+Superclass Name: null
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+
+
+--------------------------------------
+The method(s) the class declares:
+--------------------------------------
+The constructor(s) in java.io.Serializable:
+--------------------------------------
+The field(s) of this class: 
+--------------------------------------
+========================================================================
+========================================================================
+Class Name: java.lang.Object
+Superclass Name: null
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+
+
+--------------------------------------
+The method(s) the class declares:
+1) Name: finalize
+   Parameter Types: 
+   Exception Types: java.lang.Throwable  
+   Modifiers: Protected 
+   Return Type: void
+
+2) Name: wait
+   Parameter Types: 
+   Exception Types: java.lang.InterruptedException  
+   Modifiers: Final Public 
+   Return Type: void
+
+3) Name: wait
+   Parameter Types: long  int  
+   Exception Types: java.lang.InterruptedException  
+   Modifiers: Final Public 
+   Return Type: void
+
+4) Name: wait
+   Parameter Types: long  
+   Exception Types: java.lang.InterruptedException  
+   Modifiers: Final Native Public 
+   Return Type: void
+
+5) Name: equals
+   Parameter Types: java.lang.Object  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: boolean
+
+6) Name: toString
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.lang.String
+
+7) Name: hashCode
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Native Public 
+   Return Type: int
+
+8) Name: getClass
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Final Native Public 
+   Return Type: java.lang.Class
+
+9) Name: clone
+   Parameter Types: 
+   Exception Types: java.lang.CloneNotSupportedException  
+   Modifiers: Native Protected 
+   Return Type: java.lang.Object
+
+10) Name: notify
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Final Native Public 
+   Return Type: void
+
+11) Name: notifyAll
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Final Native Public 
+   Return Type: void
+
+12) Name: registerNatives
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Native Private Static 
+   Return Type: void
+
+--------------------------------------
+The constructor(s) in java.lang.Object:
+ 1) Parameters: 
+     Modifiers: Public 
+
+--------------------------------------
+The field(s) of this class: 
+--------------------------------------
+========================================================================
+========================================================================
+Class Name: java.lang.Object
+Superclass Name: null
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+
+
+--------------------------------------
+The method(s) the class declares:
+1) Name: finalize
+   Parameter Types: 
+   Exception Types: java.lang.Throwable  
+   Modifiers: Protected 
+   Return Type: void
+
+2) Name: wait
+   Parameter Types: 
+   Exception Types: java.lang.InterruptedException  
+   Modifiers: Final Public 
+   Return Type: void
+
+3) Name: wait
+   Parameter Types: long  int  
+   Exception Types: java.lang.InterruptedException  
+   Modifiers: Final Public 
+   Return Type: void
+
+4) Name: wait
+   Parameter Types: long  
+   Exception Types: java.lang.InterruptedException  
+   Modifiers: Final Native Public 
+   Return Type: void
+
+5) Name: equals
+   Parameter Types: java.lang.Object  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: boolean
+
+6) Name: toString
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.lang.String
+
+7) Name: hashCode
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Native Public 
+   Return Type: int
+
+8) Name: getClass
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Final Native Public 
+   Return Type: java.lang.Class
+
+9) Name: clone
+   Parameter Types: 
+   Exception Types: java.lang.CloneNotSupportedException  
+   Modifiers: Native Protected 
+   Return Type: java.lang.Object
+
+10) Name: notify
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Final Native Public 
+   Return Type: void
+
+11) Name: notifyAll
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Final Native Public 
+   Return Type: void
+
+12) Name: registerNatives
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Native Private Static 
+   Return Type: void
+
+--------------------------------------
+The constructor(s) in java.lang.Object:
+ 1) Parameters: 
+     Modifiers: Public 
+
+--------------------------------------
+The field(s) of this class: 
+--------------------------------------
+========================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Running Test: ClassD
+========================================================================
+Class Name: ClassD
+Superclass Name: java.lang.Object
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+
+
+--------------------------------------
+The method(s) the class declares:
+1) Name: toString
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.lang.String
+
+2) Name: getVal3
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: int
+
+--------------------------------------
+The constructor(s) in ClassD:
+ 1) Parameters: 
+     Modifiers: Public 
+
+ 2) Parameters: int  
+     Modifiers: Public 
+
+--------------------------------------
+The field(s) of this class: 
+1) Name: val
+   Type: ClassA
+   Pointer Value: 856419764
+   Modifiers: Private 
+
+2) Name: val2
+Error in printing value of field
+   Modifiers: Private Static 
+
+3) Name: val3
+   Type: int
+   Value: 34
+   Modifiers: Private 
+
+4) Name: vallarray
+   Type: ClassA
+   Value: [0, Error in printing value of field
+   Modifiers: Private 
+
+--------------------------------------
+========================================================================
+========================================================================
+Class Name: ClassA
+Superclass Name: java.lang.Object
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+java.io.Serializable  java.lang.Runnable  
+
+--------------------------------------
+The method(s) the class declares:
+1) Name: run
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: void
+
+2) Name: toString
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.lang.String
+
+3) Name: setVal
+   Parameter Types: int  
+   Exception Types: java.lang.Exception  
+   Modifiers: Public 
+   Return Type: void
+
+4) Name: getVal
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: int
+
+5) Name: printSomething
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Private 
+   Return Type: void
+
+--------------------------------------
+The constructor(s) in ClassA:
+ 1) Parameters: 
+     Modifiers: Public 
+
+ 2) Parameters: int  
+     Modifiers: Public 
+
+--------------------------------------
+The field(s) of this class: 
+1) Name: val
+Error in printing value of field
+   Modifiers: Private 
+
+2) Name: val2
+Error in printing value of field
+   Modifiers: Private 
+
+3) Name: val3
+Error in printing value of field
+   Modifiers: Private 
+
+--------------------------------------
+========================================================================
+========================================================================
+Class Name: java.lang.Runnable
+Superclass Name: null
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+
+
+--------------------------------------
+The method(s) the class declares:
+1) Name: run
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Abstract Public 
+   Return Type: void
+
+--------------------------------------
+The constructor(s) in java.lang.Runnable:
+--------------------------------------
+The field(s) of this class: 
+--------------------------------------
+========================================================================
+========================================================================
+Class Name: java.io.Serializable
+Superclass Name: null
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+
+
+--------------------------------------
+The method(s) the class declares:
+--------------------------------------
+The constructor(s) in java.io.Serializable:
+--------------------------------------
+The field(s) of this class: 
+--------------------------------------
+========================================================================
+========================================================================
+Class Name: java.lang.Object
+Superclass Name: null
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+
+
+--------------------------------------
+The method(s) the class declares:
+1) Name: finalize
+   Parameter Types: 
+   Exception Types: java.lang.Throwable  
+   Modifiers: Protected 
+   Return Type: void
+
+2) Name: wait
+   Parameter Types: 
+   Exception Types: java.lang.InterruptedException  
+   Modifiers: Final Public 
+   Return Type: void
+
+3) Name: wait
+   Parameter Types: long  int  
+   Exception Types: java.lang.InterruptedException  
+   Modifiers: Final Public 
+   Return Type: void
+
+4) Name: wait
+   Parameter Types: long  
+   Exception Types: java.lang.InterruptedException  
+   Modifiers: Final Native Public 
+   Return Type: void
+
+5) Name: equals
+   Parameter Types: java.lang.Object  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: boolean
+
+6) Name: toString
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.lang.String
+
+7) Name: hashCode
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Native Public 
+   Return Type: int
+
+8) Name: getClass
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Final Native Public 
+   Return Type: java.lang.Class
+
+9) Name: clone
+   Parameter Types: 
+   Exception Types: java.lang.CloneNotSupportedException  
+   Modifiers: Native Protected 
+   Return Type: java.lang.Object
+
+10) Name: notify
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Final Native Public 
+   Return Type: void
+
+11) Name: notifyAll
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Final Native Public 
+   Return Type: void
+
+12) Name: registerNatives
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Native Private Static 
+   Return Type: void
+
+--------------------------------------
+The constructor(s) in java.lang.Object:
+ 1) Parameters: 
+     Modifiers: Public 
+
+--------------------------------------
+The field(s) of this class: 
+--------------------------------------
+========================================================================
+========================================================================
+Class Name: java.lang.Object
+Superclass Name: null
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+
+
+--------------------------------------
+The method(s) the class declares:
+1) Name: finalize
+   Parameter Types: 
+   Exception Types: java.lang.Throwable  
+   Modifiers: Protected 
+   Return Type: void
+
+2) Name: wait
+   Parameter Types: 
+   Exception Types: java.lang.InterruptedException  
+   Modifiers: Final Public 
+   Return Type: void
+
+3) Name: wait
+   Parameter Types: long  int  
+   Exception Types: java.lang.InterruptedException  
+   Modifiers: Final Public 
+   Return Type: void
+
+4) Name: wait
+   Parameter Types: long  
+   Exception Types: java.lang.InterruptedException  
+   Modifiers: Final Native Public 
+   Return Type: void
+
+5) Name: equals
+   Parameter Types: java.lang.Object  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: boolean
+
+6) Name: toString
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.lang.String
+
+7) Name: hashCode
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Native Public 
+   Return Type: int
+
+8) Name: getClass
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Final Native Public 
+   Return Type: java.lang.Class
+
+9) Name: clone
+   Parameter Types: 
+   Exception Types: java.lang.CloneNotSupportedException  
+   Modifiers: Native Protected 
+   Return Type: java.lang.Object
+
+10) Name: notify
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Final Native Public 
+   Return Type: void
+
+11) Name: notifyAll
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Final Native Public 
+   Return Type: void
+
+12) Name: registerNatives
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Native Private Static 
+   Return Type: void
+
+--------------------------------------
+The constructor(s) in java.lang.Object:
+ 1) Parameters: 
+     Modifiers: Public 
+
+--------------------------------------
+The field(s) of this class: 
+--------------------------------------
+========================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Running Test: [LClassB;@2503dbd3
+========================================================================
+Class Name: [LClassB;
+Superclass Name: java.lang.Object
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+java.lang.Cloneable  java.io.Serializable  
+
+--------------------------------------
+The method(s) the class declares:
+--------------------------------------
+The constructor(s) in [LClassB;:
+--------------------------------------
+The field(s) of this class: 
+--------------------------------------
+========================================================================
+========================================================================
+Class Name: java.io.Serializable
+Superclass Name: null
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+
+
+--------------------------------------
+The method(s) the class declares:
+--------------------------------------
+The constructor(s) in java.io.Serializable:
+--------------------------------------
+The field(s) of this class: 
+--------------------------------------
+========================================================================
+========================================================================
+Class Name: java.lang.Cloneable
+Superclass Name: null
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+
+
+--------------------------------------
+The method(s) the class declares:
+--------------------------------------
+The constructor(s) in java.lang.Cloneable:
+--------------------------------------
+The field(s) of this class: 
+--------------------------------------
+========================================================================
+========================================================================
+Class Name: java.lang.Object
+Superclass Name: null
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+
+
+--------------------------------------
+The method(s) the class declares:
+1) Name: finalize
+   Parameter Types: 
+   Exception Types: java.lang.Throwable  
+   Modifiers: Protected 
+   Return Type: void
+
+2) Name: wait
+   Parameter Types: 
+   Exception Types: java.lang.InterruptedException  
+   Modifiers: Final Public 
+   Return Type: void
+
+3) Name: wait
+   Parameter Types: long  int  
+   Exception Types: java.lang.InterruptedException  
+   Modifiers: Final Public 
+   Return Type: void
+
+4) Name: wait
+   Parameter Types: long  
+   Exception Types: java.lang.InterruptedException  
+   Modifiers: Final Native Public 
+   Return Type: void
+
+5) Name: equals
+   Parameter Types: java.lang.Object  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: boolean
+
+6) Name: toString
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.lang.String
+
+7) Name: hashCode
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Native Public 
+   Return Type: int
+
+8) Name: getClass
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Final Native Public 
+   Return Type: java.lang.Class
+
+9) Name: clone
+   Parameter Types: 
+   Exception Types: java.lang.CloneNotSupportedException  
+   Modifiers: Native Protected 
+   Return Type: java.lang.Object
+
+10) Name: notify
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Final Native Public 
+   Return Type: void
+
+11) Name: notifyAll
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Final Native Public 
+   Return Type: void
+
+12) Name: registerNatives
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Native Private Static 
+   Return Type: void
+
+--------------------------------------
+The constructor(s) in java.lang.Object:
+ 1) Parameters: 
+     Modifiers: Public 
+
+--------------------------------------
+The field(s) of this class: 
+--------------------------------------
+========================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Running Test: [[LClassB;@12a3a380
+========================================================================
+Class Name: [[LClassB;
+Superclass Name: java.lang.Object
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+java.lang.Cloneable  java.io.Serializable  
+
+--------------------------------------
+The method(s) the class declares:
+--------------------------------------
+The constructor(s) in [[LClassB;:
+--------------------------------------
+The field(s) of this class: 
+--------------------------------------
+========================================================================
+========================================================================
+Class Name: java.io.Serializable
+Superclass Name: null
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+
+
+--------------------------------------
+The method(s) the class declares:
+--------------------------------------
+The constructor(s) in java.io.Serializable:
+--------------------------------------
+The field(s) of this class: 
+--------------------------------------
+========================================================================
+========================================================================
+Class Name: java.lang.Cloneable
+Superclass Name: null
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+
+
+--------------------------------------
+The method(s) the class declares:
+--------------------------------------
+The constructor(s) in java.lang.Cloneable:
+--------------------------------------
+The field(s) of this class: 
+--------------------------------------
+========================================================================
+========================================================================
+Class Name: java.lang.Object
+Superclass Name: null
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+
+
+--------------------------------------
+The method(s) the class declares:
+1) Name: finalize
+   Parameter Types: 
+   Exception Types: java.lang.Throwable  
+   Modifiers: Protected 
+   Return Type: void
+
+2) Name: wait
+   Parameter Types: 
+   Exception Types: java.lang.InterruptedException  
+   Modifiers: Final Public 
+   Return Type: void
+
+3) Name: wait
+   Parameter Types: long  int  
+   Exception Types: java.lang.InterruptedException  
+   Modifiers: Final Public 
+   Return Type: void
+
+4) Name: wait
+   Parameter Types: long  
+   Exception Types: java.lang.InterruptedException  
+   Modifiers: Final Native Public 
+   Return Type: void
+
+5) Name: equals
+   Parameter Types: java.lang.Object  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: boolean
+
+6) Name: toString
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.lang.String
+
+7) Name: hashCode
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Native Public 
+   Return Type: int
+
+8) Name: getClass
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Final Native Public 
+   Return Type: java.lang.Class
+
+9) Name: clone
+   Parameter Types: 
+   Exception Types: java.lang.CloneNotSupportedException  
+   Modifiers: Native Protected 
+   Return Type: java.lang.Object
+
+10) Name: notify
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Final Native Public 
+   Return Type: void
+
+11) Name: notifyAll
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Final Native Public 
+   Return Type: void
+
+12) Name: registerNatives
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Native Private Static 
+   Return Type: void
+
+--------------------------------------
+The constructor(s) in java.lang.Object:
+ 1) Parameters: 
+     Modifiers: Public 
+
+--------------------------------------
+The field(s) of this class: 
+--------------------------------------
+========================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Running Test: Test String
+========================================================================
+Class Name: java.lang.String
+Superclass Name: java.lang.Object
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+java.io.Serializable  java.lang.Comparable  java.lang.CharSequence  
+
+--------------------------------------
+The method(s) the class declares:
+1) Name: equals
+   Parameter Types: java.lang.Object  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: boolean
+
+2) Name: toString
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.lang.String
+
+3) Name: hashCode
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: int
+
+4) Name: compareTo
+   Parameter Types: java.lang.String  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: int
+
+5) Name: compareTo
+   Parameter Types: java.lang.Object  
+   Exception Types: 
+   Modifiers: Public Volatile 
+   Return Type: int
+
+6) Name: indexOf
+   Parameter Types: java.lang.String  int  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: int
+
+7) Name: indexOf
+   Parameter Types: java.lang.String  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: int
+
+8) Name: indexOf
+   Parameter Types: int  int  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: int
+
+9) Name: indexOf
+   Parameter Types: int  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: int
+
+10) Name: indexOf
+   Parameter Types: [C  int  int  [C  int  int  int  
+   Exception Types: 
+   Modifiers: Static 
+   Return Type: int
+
+11) Name: indexOf
+   Parameter Types: [C  int  int  java.lang.String  int  
+   Exception Types: 
+   Modifiers: Static 
+   Return Type: int
+
+12) Name: valueOf
+   Parameter Types: int  
+   Exception Types: 
+   Modifiers: Public Static 
+   Return Type: java.lang.String
+
+13) Name: valueOf
+   Parameter Types: long  
+   Exception Types: 
+   Modifiers: Public Static 
+   Return Type: java.lang.String
+
+14) Name: valueOf
+   Parameter Types: float  
+   Exception Types: 
+   Modifiers: Public Static 
+   Return Type: java.lang.String
+
+15) Name: valueOf
+   Parameter Types: boolean  
+   Exception Types: 
+   Modifiers: Public Static 
+   Return Type: java.lang.String
+
+16) Name: valueOf
+   Parameter Types: [C  
+   Exception Types: 
+   Modifiers: Public Static 
+   Return Type: java.lang.String
+
+17) Name: valueOf
+   Parameter Types: [C  int  int  
+   Exception Types: 
+   Modifiers: Public Static 
+   Return Type: java.lang.String
+
+18) Name: valueOf
+   Parameter Types: java.lang.Object  
+   Exception Types: 
+   Modifiers: Public Static 
+   Return Type: java.lang.String
+
+19) Name: valueOf
+   Parameter Types: char  
+   Exception Types: 
+   Modifiers: Public Static 
+   Return Type: java.lang.String
+
+20) Name: valueOf
+   Parameter Types: double  
+   Exception Types: 
+   Modifiers: Public Static 
+   Return Type: java.lang.String
+
+21) Name: charAt
+   Parameter Types: int  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: char
+
+22) Name: checkBounds
+   Parameter Types: [B  int  int  
+   Exception Types: 
+   Modifiers: Private Static 
+   Return Type: void
+
+23) Name: codePointAt
+   Parameter Types: int  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: int
+
+24) Name: codePointBefore
+   Parameter Types: int  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: int
+
+25) Name: codePointCount
+   Parameter Types: int  int  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: int
+
+26) Name: compareToIgnoreCase
+   Parameter Types: java.lang.String  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: int
+
+27) Name: concat
+   Parameter Types: java.lang.String  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.lang.String
+
+28) Name: contains
+   Parameter Types: java.lang.CharSequence  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: boolean
+
+29) Name: contentEquals
+   Parameter Types: java.lang.CharSequence  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: boolean
+
+30) Name: contentEquals
+   Parameter Types: java.lang.StringBuffer  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: boolean
+
+31) Name: copyValueOf
+   Parameter Types: [C  
+   Exception Types: 
+   Modifiers: Public Static 
+   Return Type: java.lang.String
+
+32) Name: copyValueOf
+   Parameter Types: [C  int  int  
+   Exception Types: 
+   Modifiers: Public Static 
+   Return Type: java.lang.String
+
+33) Name: endsWith
+   Parameter Types: java.lang.String  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: boolean
+
+34) Name: equalsIgnoreCase
+   Parameter Types: java.lang.String  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: boolean
+
+35) Name: format
+   Parameter Types: java.util.Locale  java.lang.String  [Ljava.lang.Object;  
+   Exception Types: 
+   Modifiers: Public Static Transient 
+   Return Type: java.lang.String
+
+36) Name: format
+   Parameter Types: java.lang.String  [Ljava.lang.Object;  
+   Exception Types: 
+   Modifiers: Public Static Transient 
+   Return Type: java.lang.String
+
+37) Name: getBytes
+   Parameter Types: int  int  [B  int  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: void
+
+38) Name: getBytes
+   Parameter Types: java.nio.charset.Charset  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: [B
+
+39) Name: getBytes
+   Parameter Types: java.lang.String  
+   Exception Types: java.io.UnsupportedEncodingException  
+   Modifiers: Public 
+   Return Type: [B
+
+40) Name: getBytes
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: [B
+
+41) Name: getChars
+   Parameter Types: int  int  [C  int  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: void
+
+42) Name: getChars
+   Parameter Types: [C  int  
+   Exception Types: 
+   Modifiers: 
+   Return Type: void
+
+43) Name: indexOfSupplementary
+   Parameter Types: int  int  
+   Exception Types: 
+   Modifiers: Private 
+   Return Type: int
+
+44) Name: intern
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Native Public 
+   Return Type: java.lang.String
+
+45) Name: isEmpty
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: boolean
+
+46) Name: join
+   Parameter Types: java.lang.CharSequence  [Ljava.lang.CharSequence;  
+   Exception Types: 
+   Modifiers: Public Static Transient 
+   Return Type: java.lang.String
+
+47) Name: join
+   Parameter Types: java.lang.CharSequence  java.lang.Iterable  
+   Exception Types: 
+   Modifiers: Public Static 
+   Return Type: java.lang.String
+
+48) Name: lastIndexOf
+   Parameter Types: int  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: int
+
+49) Name: lastIndexOf
+   Parameter Types: java.lang.String  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: int
+
+50) Name: lastIndexOf
+   Parameter Types: [C  int  int  java.lang.String  int  
+   Exception Types: 
+   Modifiers: Static 
+   Return Type: int
+
+51) Name: lastIndexOf
+   Parameter Types: java.lang.String  int  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: int
+
+52) Name: lastIndexOf
+   Parameter Types: int  int  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: int
+
+53) Name: lastIndexOf
+   Parameter Types: [C  int  int  [C  int  int  int  
+   Exception Types: 
+   Modifiers: Static 
+   Return Type: int
+
+54) Name: lastIndexOfSupplementary
+   Parameter Types: int  int  
+   Exception Types: 
+   Modifiers: Private 
+   Return Type: int
+
+55) Name: length
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: int
+
+56) Name: matches
+   Parameter Types: java.lang.String  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: boolean
+
+57) Name: nonSyncContentEquals
+   Parameter Types: java.lang.AbstractStringBuilder  
+   Exception Types: 
+   Modifiers: Private 
+   Return Type: boolean
+
+58) Name: offsetByCodePoints
+   Parameter Types: int  int  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: int
+
+59) Name: regionMatches
+   Parameter Types: int  java.lang.String  int  int  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: boolean
+
+60) Name: regionMatches
+   Parameter Types: boolean  int  java.lang.String  int  int  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: boolean
+
+61) Name: replace
+   Parameter Types: char  char  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.lang.String
+
+62) Name: replace
+   Parameter Types: java.lang.CharSequence  java.lang.CharSequence  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.lang.String
+
+63) Name: replaceAll
+   Parameter Types: java.lang.String  java.lang.String  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.lang.String
+
+64) Name: replaceFirst
+   Parameter Types: java.lang.String  java.lang.String  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.lang.String
+
+65) Name: split
+   Parameter Types: java.lang.String  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: [Ljava.lang.String;
+
+66) Name: split
+   Parameter Types: java.lang.String  int  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: [Ljava.lang.String;
+
+67) Name: startsWith
+   Parameter Types: java.lang.String  int  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: boolean
+
+68) Name: startsWith
+   Parameter Types: java.lang.String  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: boolean
+
+69) Name: subSequence
+   Parameter Types: int  int  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.lang.CharSequence
+
+70) Name: substring
+   Parameter Types: int  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.lang.String
+
+71) Name: substring
+   Parameter Types: int  int  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.lang.String
+
+72) Name: toCharArray
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: [C
+
+73) Name: toLowerCase
+   Parameter Types: java.util.Locale  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.lang.String
+
+74) Name: toLowerCase
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.lang.String
+
+75) Name: toUpperCase
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.lang.String
+
+76) Name: toUpperCase
+   Parameter Types: java.util.Locale  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.lang.String
+
+77) Name: trim
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.lang.String
+
+--------------------------------------
+The constructor(s) in java.lang.String:
+ 1) Parameters: [B  int  int  
+     Modifiers: Public 
+
+ 2) Parameters: [B  java.nio.charset.Charset  
+     Modifiers: Public 
+
+ 3) Parameters: [B  java.lang.String  
+     Modifiers: Public 
+
+ 4) Parameters: [B  int  int  java.nio.charset.Charset  
+     Modifiers: Public 
+
+ 5) Parameters: [B  int  int  java.lang.String  
+     Modifiers: Public 
+
+ 6) Parameters: [C  boolean  
+     Modifiers: 
+
+ 7) Parameters: java.lang.StringBuilder  
+     Modifiers: Public 
+
+ 8) Parameters: java.lang.StringBuffer  
+     Modifiers: Public 
+
+ 9) Parameters: [B  
+     Modifiers: Public 
+
+ 10) Parameters: [I  int  int  
+     Modifiers: Public 
+
+ 11) Parameters: 
+     Modifiers: Public 
+
+ 12) Parameters: [C  
+     Modifiers: Public 
+
+ 13) Parameters: java.lang.String  
+     Modifiers: Public 
+
+ 14) Parameters: [C  int  int  
+     Modifiers: Public 
+
+ 15) Parameters: [B  int  
+     Modifiers: Public 
+
+ 16) Parameters: [B  int  int  int  
+     Modifiers: Public 
+
+--------------------------------------
+The field(s) of this class: 
+1) Name: value
+   Type: char[]
+   Value: [T, e, s, t,  , S, t, r, i, n, g, ]
+   Modifiers: Final Private 
+
+2) Name: hash
+   Type: int
+   Value: 0
+   Modifiers: Private 
+
+3) Name: serialVersionUID
+   Type: long
+   Value: -6849794470754667710
+   Modifiers: Final Private Static 
+
+4) Name: serialPersistentFields
+   Type: java.io.ObjectStreamField
+   Value: []
+   Modifiers: Final Private Static 
+
+5) Name: CASE_INSENSITIVE_ORDER
+   Type: java.util.Comparator
+   Pointer Value: 1846274136
+   Modifiers: Final Public Static 
+
+--------------------------------------
+========================================================================
+========================================================================
+Class Name: java.lang.String$CaseInsensitiveComparator
+Superclass Name: java.lang.Object
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+java.util.Comparator  java.io.Serializable  
+
+--------------------------------------
+The method(s) the class declares:
+1) Name: compare
+   Parameter Types: java.lang.Object  java.lang.Object  
+   Exception Types: 
+   Modifiers: Public Volatile 
+   Return Type: int
+
+2) Name: compare
+   Parameter Types: java.lang.String  java.lang.String  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: int
+
+3) Name: readResolve
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Private 
+   Return Type: java.lang.Object
+
+--------------------------------------
+The constructor(s) in java.lang.String$CaseInsensitiveComparator:
+ 1) Parameters: java.lang.String$1  
+     Modifiers: 
+
+ 2) Parameters: 
+     Modifiers: Private 
+
+--------------------------------------
+The field(s) of this class: 
+1) Name: serialVersionUID
+   Type: long
+   Value: 8575799808933029326
+   Modifiers: Final Private Static 
+
+--------------------------------------
+========================================================================
+========================================================================
+Class Name: java.io.Serializable
+Superclass Name: null
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+
+
+--------------------------------------
+The method(s) the class declares:
+--------------------------------------
+The constructor(s) in java.io.Serializable:
+--------------------------------------
+The field(s) of this class: 
+--------------------------------------
+========================================================================
+========================================================================
+Class Name: java.util.Comparator
+Superclass Name: null
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+
+
+--------------------------------------
+The method(s) the class declares:
+1) Name: equals
+   Parameter Types: java.lang.Object  
+   Exception Types: 
+   Modifiers: Abstract Public 
+   Return Type: boolean
+
+2) Name: compare
+   Parameter Types: java.lang.Object  java.lang.Object  
+   Exception Types: 
+   Modifiers: Abstract Public 
+   Return Type: int
+
+3) Name: $deserializeLambda$
+   Parameter Types: java.lang.invoke.SerializedLambda  
+   Exception Types: 
+   Modifiers: Private Static 
+   Return Type: java.lang.Object
+
+4) Name: comparing
+   Parameter Types: java.util.function.Function  java.util.Comparator  
+   Exception Types: 
+   Modifiers: Public Static 
+   Return Type: java.util.Comparator
+
+5) Name: comparing
+   Parameter Types: java.util.function.Function  
+   Exception Types: 
+   Modifiers: Public Static 
+   Return Type: java.util.Comparator
+
+6) Name: comparingDouble
+   Parameter Types: java.util.function.ToDoubleFunction  
+   Exception Types: 
+   Modifiers: Public Static 
+   Return Type: java.util.Comparator
+
+7) Name: comparingInt
+   Parameter Types: java.util.function.ToIntFunction  
+   Exception Types: 
+   Modifiers: Public Static 
+   Return Type: java.util.Comparator
+
+8) Name: comparingLong
+   Parameter Types: java.util.function.ToLongFunction  
+   Exception Types: 
+   Modifiers: Public Static 
+   Return Type: java.util.Comparator
+
+9) Name: lambda$comparing$77a9974f$1
+   Parameter Types: java.util.function.Function  java.lang.Object  java.lang.Object  
+   Exception Types: 
+   Modifiers: Private Static 
+   Return Type: int
+
+10) Name: lambda$comparing$ea9a8b3a$1
+   Parameter Types: java.util.Comparator  java.util.function.Function  java.lang.Object  java.lang.Object  
+   Exception Types: 
+   Modifiers: Private Static 
+   Return Type: int
+
+11) Name: lambda$comparingDouble$8dcf42ea$1
+   Parameter Types: java.util.function.ToDoubleFunction  java.lang.Object  java.lang.Object  
+   Exception Types: 
+   Modifiers: Private Static 
+   Return Type: int
+
+12) Name: lambda$comparingInt$7b0bb60$1
+   Parameter Types: java.util.function.ToIntFunction  java.lang.Object  java.lang.Object  
+   Exception Types: 
+   Modifiers: Private Static 
+   Return Type: int
+
+13) Name: lambda$comparingLong$6043328a$1
+   Parameter Types: java.util.function.ToLongFunction  java.lang.Object  java.lang.Object  
+   Exception Types: 
+   Modifiers: Private Static 
+   Return Type: int
+
+14) Name: lambda$thenComparing$36697e65$1
+   Parameter Types: java.util.Comparator  java.lang.Object  java.lang.Object  
+   Exception Types: 
+   Modifiers: Private 
+   Return Type: int
+
+15) Name: naturalOrder
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public Static 
+   Return Type: java.util.Comparator
+
+16) Name: nullsFirst
+   Parameter Types: java.util.Comparator  
+   Exception Types: 
+   Modifiers: Public Static 
+   Return Type: java.util.Comparator
+
+17) Name: nullsLast
+   Parameter Types: java.util.Comparator  
+   Exception Types: 
+   Modifiers: Public Static 
+   Return Type: java.util.Comparator
+
+18) Name: reverseOrder
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public Static 
+   Return Type: java.util.Comparator
+
+19) Name: reversed
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.util.Comparator
+
+20) Name: thenComparing
+   Parameter Types: java.util.function.Function  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.util.Comparator
+
+21) Name: thenComparing
+   Parameter Types: java.util.Comparator  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.util.Comparator
+
+22) Name: thenComparing
+   Parameter Types: java.util.function.Function  java.util.Comparator  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.util.Comparator
+
+23) Name: thenComparingDouble
+   Parameter Types: java.util.function.ToDoubleFunction  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.util.Comparator
+
+24) Name: thenComparingInt
+   Parameter Types: java.util.function.ToIntFunction  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.util.Comparator
+
+25) Name: thenComparingLong
+   Parameter Types: java.util.function.ToLongFunction  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.util.Comparator
+
+--------------------------------------
+The constructor(s) in java.util.Comparator:
+--------------------------------------
+The field(s) of this class: 
+--------------------------------------
+========================================================================
+========================================================================
+Class Name: java.lang.Object
+Superclass Name: null
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+
+
+--------------------------------------
+The method(s) the class declares:
+1) Name: finalize
+   Parameter Types: 
+   Exception Types: java.lang.Throwable  
+   Modifiers: Protected 
+   Return Type: void
+
+2) Name: wait
+   Parameter Types: 
+   Exception Types: java.lang.InterruptedException  
+   Modifiers: Final Public 
+   Return Type: void
+
+3) Name: wait
+   Parameter Types: long  int  
+   Exception Types: java.lang.InterruptedException  
+   Modifiers: Final Public 
+   Return Type: void
+
+4) Name: wait
+   Parameter Types: long  
+   Exception Types: java.lang.InterruptedException  
+   Modifiers: Final Native Public 
+   Return Type: void
+
+5) Name: equals
+   Parameter Types: java.lang.Object  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: boolean
+
+6) Name: toString
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.lang.String
+
+7) Name: hashCode
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Native Public 
+   Return Type: int
+
+8) Name: getClass
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Final Native Public 
+   Return Type: java.lang.Class
+
+9) Name: clone
+   Parameter Types: 
+   Exception Types: java.lang.CloneNotSupportedException  
+   Modifiers: Native Protected 
+   Return Type: java.lang.Object
+
+10) Name: notify
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Final Native Public 
+   Return Type: void
+
+11) Name: notifyAll
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Final Native Public 
+   Return Type: void
+
+12) Name: registerNatives
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Native Private Static 
+   Return Type: void
+
+--------------------------------------
+The constructor(s) in java.lang.Object:
+ 1) Parameters: 
+     Modifiers: Public 
+
+--------------------------------------
+The field(s) of this class: 
+--------------------------------------
+========================================================================
+========================================================================
+Class Name: java.lang.CharSequence
+Superclass Name: null
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+
+
+--------------------------------------
+The method(s) the class declares:
+1) Name: toString
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Abstract Public 
+   Return Type: java.lang.String
+
+2) Name: charAt
+   Parameter Types: int  
+   Exception Types: 
+   Modifiers: Abstract Public 
+   Return Type: char
+
+3) Name: length
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Abstract Public 
+   Return Type: int
+
+4) Name: subSequence
+   Parameter Types: int  int  
+   Exception Types: 
+   Modifiers: Abstract Public 
+   Return Type: java.lang.CharSequence
+
+5) Name: chars
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.util.stream.IntStream
+
+6) Name: codePoints
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.util.stream.IntStream
+
+7) Name: lambda$chars$1
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Private 
+   Return Type: java.util.Spliterator$OfInt
+
+8) Name: lambda$codePoints$2
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Private 
+   Return Type: java.util.Spliterator$OfInt
+
+--------------------------------------
+The constructor(s) in java.lang.CharSequence:
+--------------------------------------
+The field(s) of this class: 
+--------------------------------------
+========================================================================
+========================================================================
+Class Name: java.lang.Comparable
+Superclass Name: null
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+
+
+--------------------------------------
+The method(s) the class declares:
+1) Name: compareTo
+   Parameter Types: java.lang.Object  
+   Exception Types: 
+   Modifiers: Abstract Public 
+   Return Type: int
+
+--------------------------------------
+The constructor(s) in java.lang.Comparable:
+--------------------------------------
+The field(s) of this class: 
+--------------------------------------
+========================================================================
+========================================================================
+Class Name: java.io.Serializable
+Superclass Name: null
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+
+
+--------------------------------------
+The method(s) the class declares:
+--------------------------------------
+The constructor(s) in java.io.Serializable:
+--------------------------------------
+The field(s) of this class: 
+--------------------------------------
+========================================================================
+========================================================================
+Class Name: java.lang.Object
+Superclass Name: null
+
+--------------------------------------
+The interface(s) of this object's class is(are):
+
+
+--------------------------------------
+The method(s) the class declares:
+1) Name: finalize
+   Parameter Types: 
+   Exception Types: java.lang.Throwable  
+   Modifiers: Protected 
+   Return Type: void
+
+2) Name: wait
+   Parameter Types: 
+   Exception Types: java.lang.InterruptedException  
+   Modifiers: Final Public 
+   Return Type: void
+
+3) Name: wait
+   Parameter Types: long  int  
+   Exception Types: java.lang.InterruptedException  
+   Modifiers: Final Public 
+   Return Type: void
+
+4) Name: wait
+   Parameter Types: long  
+   Exception Types: java.lang.InterruptedException  
+   Modifiers: Final Native Public 
+   Return Type: void
+
+5) Name: equals
+   Parameter Types: java.lang.Object  
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: boolean
+
+6) Name: toString
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Public 
+   Return Type: java.lang.String
+
+7) Name: hashCode
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Native Public 
+   Return Type: int
+
+8) Name: getClass
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Final Native Public 
+   Return Type: java.lang.Class
+
+9) Name: clone
+   Parameter Types: 
+   Exception Types: java.lang.CloneNotSupportedException  
+   Modifiers: Native Protected 
+   Return Type: java.lang.Object
+
+10) Name: notify
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Final Native Public 
+   Return Type: void
+
+11) Name: notifyAll
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Final Native Public 
+   Return Type: void
+
+12) Name: registerNatives
+   Parameter Types: 
+   Exception Types: 
+   Modifiers: Native Private Static 
+   Return Type: void
+
+--------------------------------------
+The constructor(s) in java.lang.Object:
+ 1) Parameters: 
+     Modifiers: Public 
+
+--------------------------------------
+The field(s) of this class: 
+--------------------------------------
+========================================================================
