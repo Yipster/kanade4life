@@ -20,7 +20,6 @@ import java.io.*;
 public class Inspector {
 
 	Object currentObject;
-	Class currentClass;
 	Scanner sc = new Scanner(System.in);
 	public static Stack<Class> queue = new Stack<Class>();
 	public static ArrayList<String> seen;
@@ -64,32 +63,32 @@ public class Inspector {
 
 	
 	public void inspector(Object obj, Class classObject, boolean recursive) {
-		currentClass = classObject;
+		Class currClass = classObject;
 		currentObject = obj;
 		
 		//1) Get name of declaring class
 		writer.println("========================================================================");
-		inspectClass();
+		inspectClass(currClass);
 		
 		//2) Get name of immediate superclass
-		inspectSuperClass();
+		inspectSuperClass(currClass);
 		writer.println();
 		writer.println("--------------------------------------");
 		
 		//3) Name of interfaces that the class implements
-		inspectInterfaces();
+		inspectInterfaces(currClass);
 		writer.println("--------------------------------------");
 		
 		//4) Methods that the class declares. 
-		inspectMethods();
+		inspectMethods(currClass);
 		writer.println("--------------------------------------");
 		
 		//5) Constructor(s) that the class has
-		inspectConstructors();
+		inspectConstructors(currClass);
 		writer.println("--------------------------------------");
 		
 		//6) Fields that the class has
-		inspectFields(recursive);
+		inspectFields(recursive, currClass);
 		writer.println("--------------------------------------");
 		writer.println("========================================================================");
 		
@@ -98,14 +97,14 @@ public class Inspector {
 			inspector(obj, queue.pop(), recursive);
 		}
 	}
-	public String inspectClass() {
-		writer.println("Class Name: " + currentClass.getName());
-		return currentClass.getName();
+	public String inspectClass(Class currClass) {
+		writer.println("Class Name: " + currClass.getName());
+		return currClass.getName();
 	}
 	
 	//method that inspects the super class of the current object.
-	public String inspectSuperClass() {
-		Class superClass = currentClass.getSuperclass();
+	public String inspectSuperClass(Class currClass) {
+		Class superClass = currClass.getSuperclass();
 		String className = "";
 		if(superClass!= null) {
 			className = superClass.getName();
@@ -122,32 +121,36 @@ public class Inspector {
 	
 
 	//method that inspects the interfaces of the object 
-	public Class[] inspectInterfaces() {
+	public String[] inspectInterfaces(Class currClass) {
 		writer.println("The interface(s) of this object's class is(are):");
-		Class[] interfaceList = currentClass.getInterfaces();
+		Class[] interfaceList = currClass.getInterfaces();
+		String[] interfaceNames = new String[interfaceList.length];
 		for(int i = 0; i < interfaceList.length; i++) {
 			if(!seen.contains(interfaceList[i].getName()))
 				queue.push(interfaceList[i]);
+			interfaceNames[i] = interfaceList[i].getName();
 		}
 		printList(interfaceList);
 		writer.println();
 		writer.println();
-		return interfaceList;
+		return interfaceNames;
 	}
 
 
 
 
 	//method that inspects the methods of the object
-	public Method[] inspectMethods() {
+	public String[] inspectMethods(Class currClass) {
 		//4) Methods the class declares
 		writer.println("The method(s) the class declares:");
-		Method[] methodList = currentClass.getDeclaredMethods();
+		Method[] methodList = currClass.getDeclaredMethods();
+		String[] methodNames = new String[methodList.length];
 		for (int i = 0; i < methodList.length; i++) {
 			Method m = methodList[i];
 			//get method name and print
 			int k = i + 1;
 			String methodName = m.getName();
+			methodNames[i] = methodName;
 			writer.println(k + ") Name: " + methodName);
 			
 			//get parameter types of the specified method and print
@@ -171,16 +174,16 @@ public class Inspector {
 			writer.println("   Return Type: " + returnType);
 			writer.println();
 		}
-		return methodList;
+		return methodNames;
 	}
 
 
 
 
 	//method that inspects the constructor(s) of the object
-	public void inspectConstructors () {
-		writer.println("The constructor(s) in " + currentClass.getName() + ":");
-		Constructor[] constructorList = currentClass.getDeclaredConstructors();
+	public void inspectConstructors (Class currClass) {
+		writer.println("The constructor(s) in " + currClass.getName() + ":");
+		Constructor[] constructorList = currClass.getDeclaredConstructors();
 		for (int i = 0; i < constructorList.length; i++) {
 			//get the constructor i's parameter types
 			Class[] parameterTypes = constructorList[i].getParameterTypes();
@@ -193,13 +196,15 @@ public class Inspector {
 			testModifiers(mod);
 			writer.println();
 		}
+		
 	}
 
 	
 	
 	//method that inspects the class field(s)
-	public void inspectFields (boolean recursive) {
-		Field[] fieldList = currentClass.getDeclaredFields();
+	public String[] inspectFields (boolean recursive, Class currClass) {
+		Field[] fieldList = currClass.getDeclaredFields();
+		String[] fieldNames = new String[fieldList.length];
 		writer.println("The field(s) of this class: ");
 		for (int i = 0; i < fieldList.length; i++) {
 			Field f = fieldList[i];
@@ -207,6 +212,7 @@ public class Inspector {
 			//get each field name
 			int k = i + 1;
 			String fieldName = f.getName();
+			fieldNames[i] = fieldName;
 			writer.println(k + ") Name: " + fieldName);
 
 			//get type of field of each field
@@ -244,6 +250,7 @@ public class Inspector {
 			testModifiers(mod);
 			writer.println();
 		}
+		return fieldNames;
 	}
 
 	
