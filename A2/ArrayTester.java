@@ -1,12 +1,21 @@
 public class ArrayTester {
 
-	public ClassA[] arrayInt;
-	public int global;
+	int global;
+	Object[] array;
+	ClassA classA;
+	ClassB classB;
+	ClassC classC;
 	
 	public ArrayTester() {
-		arrayInt = new ClassA[10];
-		for(int i = 0; i < arrayInt.length; i++) {
-			arrayInt[i] = new ClassA();
+		try{
+			classA = new ClassA();
+			classB = new ClassB();
+			array = new Object[3];
+			array[0] = classA;
+			array[1] = classB;
+		}
+		catch(Exception e) {
+			System.out.println("Cannot create classes");
 		}
 	}
 

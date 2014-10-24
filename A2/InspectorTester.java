@@ -13,17 +13,19 @@ public class InspectorTester {
 	@Before
 	public void setUp() {
 		inspector = new Inspector();
+		classA = new ClassA();
 	}
 	
 	@After
 	public void tearDown() {
 		inspector = null;
+		classA = null;
 	}
 	
 	
 	@Test
 	public void inspectorTest_className() {
-		
+		inspector.inspect(classA, false)
 	}
 
 
