@@ -14,6 +14,8 @@ public class ObjectCreator {
 	public Foo1 foo1;
 	public Foo2 foo2;
 	public Serializer serializer = new Serializer();
+	public Deserializer deserializer = new Deserializer();
+	public Visualizer visualizer = new Visualizer();
 	
 
 	public ObjectCreator() {
@@ -63,7 +65,7 @@ public class ObjectCreator {
 	
 	//This method makes an instance of an object that has an array of objects
 	public void object4() {
-		//An object that contians an array of object references
+		//An object that contains an array of object references
 		System.out.println("You have selected: Object with an array of objects.");
 
 	}
@@ -77,6 +79,8 @@ public class ObjectCreator {
 			if(input.equals("1")){
 				object1();		
 				serializer.serialize(myObj);
+				Object myobj = deserializer.findXMLFile();
+				visualizer.inspect(myobj);
 			}
 			else if(input.equals("2")) {
 
