@@ -13,6 +13,7 @@ public class ObjectCreator {
 	public Object myObj;
 	public Foo1 foo1;
 	public Foo2 foo2;
+	public Foo3 foo3;
 	public Serializer serializer = new Serializer();
 	public Deserializer deserializer = new Deserializer();
 	public Visualizer visualizer = new Visualizer();
@@ -83,6 +84,26 @@ public class ObjectCreator {
 	public void object3() {
 		//An object that contains array of primitives
 		System.out.println("You have selected: Object with an array of primitives.");
+		System.out.println("Info: This object has two fields:\n"
+				+ "  1) Integer array called 'values'. Length = 3\n"
+				+ "  2) String array called 'punchphrases. Length = 2'\n"
+				+ " Enter the inputs one after the other:");
+		System.out.print("First input (values, index 0): ");
+		int value1 = Integer.parseInt(in.nextLine());
+		System.out.print("Second input (values, index 1): ");
+		int value2 = Integer.parseInt(in.nextLine());
+		System.out.print("Third input (values, index 2): ");
+		int value3 = Integer.parseInt(in.nextLine());
+		System.out.print("Fourth input (punchphrases, index 0): ");
+		String message = in.nextLine();
+		System.out.print("Fifth input (punchphrases, index 1): ");
+		String message2 = in.nextLine();
+		
+		foo3 = new Foo3();
+		foo3.fillValues(value1, value2, value3);
+		foo3.fillPunches(message, message2);
+		myObj = foo3;
+	
 	}
 
 	

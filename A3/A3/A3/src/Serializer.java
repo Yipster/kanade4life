@@ -24,7 +24,9 @@ public class Serializer {
 				currentClass = currentObject.getClass();
 			}
 			if(currentClass.isArray()) {
-				
+				Element object = new Element("object");
+				object.setAttribute(new Attribute("class", currentClass.getName()));
+				object.setAttribute(new Attribute("id", Integer.toString(id)));
 				
 			}
 			
@@ -50,7 +52,7 @@ public class Serializer {
 						}
 						//handles arrays
 						else if(value.getClass().isArray()) {
-							
+							seen.push(value);
 						}
 						//handles objects
 						else {
