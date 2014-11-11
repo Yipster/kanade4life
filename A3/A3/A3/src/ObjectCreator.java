@@ -47,7 +47,9 @@ public class ObjectCreator {
 		int value = Integer.parseInt(in.nextLine());
 		System.out.print("Second input (String): ");
 		String message = in.nextLine();
-		foo1 = new Foo1(value, message);
+		foo1 = new Foo1();
+		foo1.setPunchphrase(message);
+		foo1.setValue(value);
 		myObj = foo1;
 	}
 
@@ -69,7 +71,11 @@ public class ObjectCreator {
 		System.out.print("Fourth input (String): ");
 		String message2 = in.nextLine();
 		
-		foo2 = new Foo2(value, message, value2, message2);
+		foo2 = new Foo2();
+		foo2.setPunchphrase2(message);
+		foo2.setValue2(value);
+		foo2.foo1.setPunchphrase(message2);
+		foo2.foo1.setValue(value2);
 		myObj = foo2;
 	}
 
@@ -100,7 +106,10 @@ public class ObjectCreator {
 				visualizer.inspect(myobj);
 			}
 			else if(input.equals("2")) {
-
+				object2();
+				serializer.serialize(myObj);
+				Object myobj = deserializer.findXMLFile();
+				visualizer.inspect(myobj);
 			}
 			else if(input.equals("3")) {
 

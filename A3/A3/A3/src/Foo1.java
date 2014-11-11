@@ -16,5 +16,21 @@ public class Foo1 {
 		this.punchphrase = punchphrase;
 	}
 	
+	public int getValue() {
+		return value;
+	}
+
+	public void setValue(int value) {
+		this.value = value;
+	}
+
+	public String getPunchphrase() {
+		return punchphrase;
+	}
+
+	public void setPunchphrase(String punchphrase) {
+		this.punchphrase = punchphrase;
+	}
+
 
 }

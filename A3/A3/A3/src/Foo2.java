@@ -4,19 +4,28 @@ Author: Brandon Yip
 */
 
 public class Foo2 {
+
 	public int value2;
 	public String punchphrase2;
 	public Foo1 foo1;
 
 	public Foo2() {
-
-	}
-
-	public Foo2(int value, String punchphrase) {
-		this.value2 = value;
-		this.punchphrase2 = punchphrase;
-		foo1 = new Foo1(value + 1, punchphrase + "abc");
+		foo1 = new Foo1();
 	}
 	
+	public int getValue2() {
+		return value2;
+	}
 
+	public void setValue2(int value2) {
+		this.value2 = value2;
+	}
+
+	public String getPunchphrase2() {
+		return punchphrase2;
+	}
+
+	public void setPunchphrase2(String punchphrase2) {
+		this.punchphrase2 = punchphrase2;
+	}
 }

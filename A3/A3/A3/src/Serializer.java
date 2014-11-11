@@ -13,54 +13,62 @@ public class Serializer {
 	public Object currentObject;
 	public Class currentClass;
 	public Foo1 foo1;
-	public ArrayList<Class> arrayList = new ArrayList<Class>();
+	public Stack<Object> seen = new Stack<Object>();
 	public ArrayList<Class> visited = new ArrayList<Class>();
 	
 	public void objectTag() {
 		int id = 0;
-		if(currentClass.isArray()) {
-			
-			
-		}
-		
-		else{
-			Element object = new Element("object");
-			object.setAttribute(new Attribute("class", currentClass.getName()));
-			object.setAttribute(new Attribute("id", Integer.toString(id)));
-	
-			Field[] fields = currentClass.getDeclaredFields();
-			for(int i = 0; i < fields.length; i++) {
-				Element field = new Element("field" + Integer.toString(i));
-				Field f = fields[i];
-				f.setAccessible(true);
-				field.setAttribute(new Attribute("name", f.getName()));
-				field.setAttribute(new Attribute("declaringclass", f.getDeclaringClass().getName()));
+		do {
+			if(!seen.empty()) {
+				currentObject = seen.pop();
+				currentClass = currentObject.getClass();
+			}
+			if(currentClass.isArray()) {
 				
-				Class typeClass = f.getType();
-				try {
-					//handles primitives
-					Object value = f.get(currentObject);
-					if(typeClass.isPrimitive() || typeClass.equals(String.class)) {
-						field.addContent(new Element("value").setText(value.toString()));
-					}
-					//handles arrays
-					else if(value.getClass().isArray()) {
-						
-					}
-					//handles objects
-					else {
-						field.addContent(new Element("reference").setText(value.toString()));
-					}
-					object.addContent(field);
-				}
-				catch (Exception e) {
-					System.out.println("Error in printing value of field");
-				}
 				
 			}
 			
-			doc.getRootElement().addContent(object);
-		}
+			else{
+				Element object = new Element("object");
+				object.setAttribute(new Attribute("class", currentClass.getName()));
+				object.setAttribute(new Attribute("id", Integer.toString(id)));
+		
+				Field[] fields = currentClass.getDeclaredFields();
+				for(int i = 0; i < fields.length; i++) {
+					Element field = new Element("field" + Integer.toString(i));
+					Field f = fields[i];
+					f.setAccessible(true);
+					field.setAttribute(new Attribute("name", f.getName()));
+					field.setAttribute(new Attribute("declaringclass", f.getDeclaringClass().getName()));
+					
+					Class typeClass = f.getType();
+					try {
+						//handles primitives
+						Object value = f.get(currentObject);
+						if(typeClass.isPrimitive() || typeClass.equals(String.class)) {
+							field.addContent(new Element("value").setText(value.toString()));
+						}
+						//handles arrays
+						else if(value.getClass().isArray()) {
+							
+						}
+						//handles objects
+						else {
+							field.addContent(new Element("reference").setText(value.toString()));
+							seen.push(value);
+						}
+						object.addContent(field);
+					}
+					catch (Exception e) {
+						System.out.println("Error in printing value of field");
+					}
+					
+				}
+				
+				doc.getRootElement().addContent(object);
+			}
+			id++;
+		}while(!seen.isEmpty());
 	}
 	
 	

@@ -6,6 +6,7 @@ import java.util.*;
 public class Visualizer {
 	public Class currentClass;
 	public Object currentObject;
+	public Stack<Object> seen = new Stack<Object>();
 	
 	public String[] inspectFields (Class currClass) {
 		Field[] fieldList = currClass.getDeclaredFields();
@@ -41,7 +42,9 @@ public class Visualizer {
 				//handles objects
 				else {
 					System.out.println("   Type: " + typeClass.getName());
-					System.out.print("   Pointer Value: " + System.identityHashCode(value));
+					System.out.print("   Pointer Value: " + value.toString());
+					//System.out.print("   Pointer Value: " + System.identityHashCode(value));
+					seen.push(value);
 				}
 				System.out.println();
 			}
@@ -194,7 +197,12 @@ public class Visualizer {
 		currentObject = obj;
 		currentClass = obj.getClass();
 		System.out.println("Class Name: " + currentClass.getName());
+		
 		inspectFields(currentClass);
+		
+		if(!seen.empty()) {
+			inspect(seen.pop());
+		}
 	}
 	
 }

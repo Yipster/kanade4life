@@ -8,10 +8,14 @@ import org.jdom.Element;
 
 public class Deserializer {
 	public Object deserialize(org.jdom.Document document) {
+		System.out.println("===============================================\n"
+				+ "Deserializing object......");
 		Object obj = new Object();
 		try {
 			Element rootNode = document.getRootElement();
 			List<Element> objects = rootNode.getChildren();
+			
+			//prints it out to console just for now.
 			for(int i = 0; i < objects.size(); i++ ){
 				Element object = (Element) objects.get(i);
 				String objectName = object.getAttributeValue("class");
@@ -19,7 +23,6 @@ public class Deserializer {
 				
 				//print out field values
 				List<Element> fields = object.getChildren();
-				ArrayList fieldValues = new ArrayList();
 				for(int j = 0; j < fields.size(); j++) {
 					Element field = (Element) fields.get(j);
 					int k = j+1;
@@ -32,21 +35,11 @@ public class Deserializer {
 					}
 					System.out.println();
 				}
-				System.out.println();
-				
-				
-				
-				//create object here
-				//if object is called Foo1 which only contains primitive types
-				if(objectName.equals("Foo1"))
-					obj = createFoo1(fields);
-				
-				else if(objectName.equals("Foo2")) {
-					//functionality for 
-				}
-				
-				
+				System.out.println();		
 			}
+			
+			//createObject here
+			obj = createObject(objects);
 		} catch (Exception e) {
 			System.out.println("Error in deserializing xml file");
 		}
@@ -56,6 +49,31 @@ public class Deserializer {
 	}
 
 	
+	//create objects method
+	public Object createObject(List<Element> objects){
+		Object obj = new Object();
+		for(int i = 0; i < objects.size(); i++) {
+			Element object = (Element) objects.get(i);
+			String objectName = object.getAttributeValue("class");
+			List<Element> fields = object.getChildren();
+			//if object is called Foo1 which only contains primitive types
+			if(objectName.equals("Foo1"))
+				obj = createFoo1(fields);
+			
+			else if(objectName.equals("Foo2")) {
+				//functionality for
+				Element object2 = (Element)objects.get(i+1);
+				List<Element> fields2 = object2.getChildren();
+				i++;
+				obj = createFoo2(fields, fields2);
+			}
+		}
+		return obj;
+	}
+	
+	
+	
+	
 	
 	public Object createFoo1(List<Element> fields) {
 		Object obj = new Object();
@@ -64,6 +82,7 @@ public class Deserializer {
 			int value = Integer.parseInt(fields.get(0).getChildText("value"));
 			String punchphrase = fields.get(1).getChildText("value");
 			obj = c.newInstance(value, punchphrase);
+			
 		} catch(Exception e) {
 			System.out.println("Problem with creating Foo1 object.");
 		}
@@ -71,7 +90,26 @@ public class Deserializer {
 	}
 	
 	
-	
+	public Object createFoo2(List<Element> fields, List<Element> fields2) {
+		Object obj = new Object();
+		try {
+			Constructor c = Class.forName("Foo2").getConstructor();
+			int value = Integer.parseInt(fields.get(0).getChildText("value"));
+			String punchphrase = fields.get(1).getChildText("value");
+			obj = c.newInstance();
+			Foo1 foo1 = (Foo1) createFoo1(fields2);
+			Foo2 foo2 = (Foo2) obj;
+			foo2.setPunchphrase2(punchphrase);
+			foo2.setValue2(value);
+			foo2.foo1 = foo1;
+			obj = foo2;
+			
+		} catch(Exception e) {
+			System.out.println("Problem with creating Foo2 object.");
+		}
+		
+		return obj;
+	}
 	
 	
 	public Object findXMLFile() {
