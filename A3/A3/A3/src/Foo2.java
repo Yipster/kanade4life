@@ -12,10 +12,10 @@ public class Foo2 {
 
 	}
 
-	public Foo2(int value, String punchphrase) {
-		this.value2 = value;
-		this.punchphrase2 = punchphrase;
-		foo1 = new Foo1(value + 1, punchphrase + "abc");
+	public Foo2(int value2, String punchphrase2, int value, String punchphrase) {
+		this.value2 = value2;
+		this.punchphrase2 = punchphrase2;
+		foo1 = new Foo1(value, punchphrase);
 	}
 	
 
