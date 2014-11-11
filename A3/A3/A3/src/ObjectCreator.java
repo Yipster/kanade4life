@@ -31,10 +31,10 @@ public class ObjectCreator {
 		System.out.println(" 4) Contain an array of object references");
 		System.out.println(" Enter 'Q' to quit");
 		System.out.println("Input the corresponding number to your desire.");
-
 	}
 
 
+	// This method makes an instance of an object that only has primitive fields
 	// This method makes an instance of an object that only has primitive fields
 	public void object1() {
 		//Simple object with only primitives for instance variables
@@ -93,7 +93,6 @@ public class ObjectCreator {
 		do {
 			display();
 			input = in.nextLine();
-			System.out.println();
 			if(input.equals("1")){
 				object1();		
 				serializer.serialize(myObj);
@@ -101,10 +100,7 @@ public class ObjectCreator {
 				visualizer.inspect(myobj);
 			}
 			else if(input.equals("2")) {
-				object2();
-				/*serializer.serialize(myObj);
-				Object myobj = deserializer.findXMLFile();
-				visualizer.inspect(myobj);*/
+
 			}
 			else if(input.equals("3")) {
 
@@ -117,10 +113,9 @@ public class ObjectCreator {
 			}
 				
 			else {
-				System.out.println("You did not enter a number that is listed here or 'Q'.");
+				System.out.println("You did not enter a number that is listed here.");
 			}
 		} while(!input.equalsIgnoreCase("q"));
-		System.out.println("Exited Program");
 	}
 	
 }
