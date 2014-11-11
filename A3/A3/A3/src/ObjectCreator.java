@@ -133,7 +133,8 @@ public class ObjectCreator {
 				visualizer.inspect(myobj);
 			}
 			else if(input.equals("3")) {
-
+				object3();
+				serializer.serialize(myObj);
 			}
 			else if(input.equals("4")) {
 

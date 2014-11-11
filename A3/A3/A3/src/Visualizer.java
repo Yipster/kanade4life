@@ -43,7 +43,6 @@ public class Visualizer {
 				else {
 					System.out.println("   Type: " + typeClass.getName());
 					System.out.print("   Pointer Value: " + value.toString());
-					//System.out.print("   Pointer Value: " + System.identityHashCode(value));
 					seen.push(value);
 				}
 				System.out.println();
@@ -196,10 +195,11 @@ public class Visualizer {
 	public void inspect(Object obj) {
 		currentObject = obj;
 		currentClass = obj.getClass();
+		System.out.println("--------------------------------");
 		System.out.println("Class Name: " + currentClass.getName());
 		
 		inspectFields(currentClass);
-		
+		System.out.println("--------------------------------");
 		if(!seen.empty()) {
 			inspect(seen.pop());
 		}

@@ -3,6 +3,7 @@ import java.util.*;
 import java.io.*;
 import java.lang.reflect.*;
 import java.io.FileWriter;
+
 import org.jdom.*;
 import org.jdom.output.Format;
 import org.jdom.output.XMLOutputter;
@@ -16,6 +17,99 @@ public class Serializer {
 	public Stack<Object> seen = new Stack<Object>();
 	public ArrayList<Class> visited = new ArrayList<Class>();
 	
+	
+	
+	
+	//handles printing of the array
+	public Element fieldArrays(Object object, Element objectTag) {
+		Element objectTagged = objectTag;
+		int length = 0;
+		if (object.getClass().isArray()) {
+			Class<?> componentType;
+			componentType = object.getClass().getComponentType();
+			if (componentType.isPrimitive()) {
+				if (boolean.class.isAssignableFrom(componentType)) {
+					for (boolean anElement : (boolean[]) object) {
+						objectTagged.addContent(new Element("value").setText(String.valueOf(anElement)));
+						length++;
+					}
+				}
+				
+				else if (byte.class.isAssignableFrom(componentType)) {
+					for(byte anElement : (byte[]) object) {
+						System.out.print(anElement + ", ");
+						length++;
+					}
+				}
+
+				else if (char.class.isAssignableFrom(componentType)) {
+					for(char anElement : (char[]) object) {
+						System.out.print(anElement + ", ");
+						length++;
+					}
+				}
+
+				else if (double.class.isAssignableFrom(componentType)) {
+					for(double anElement : (double[]) object) {
+						System.out.print(anElement + ", ");
+						length++;
+					}
+				}
+
+				else if (float.class.isAssignableFrom(componentType)) {
+					for(float anElement : (float[]) object) {
+						System.out.print(anElement + ", ");
+						length++;
+					}
+				}
+
+				else if (int.class.isAssignableFrom(componentType)) {
+					for (int anElement : (int[]) object) {
+						objectTagged.addContent(new Element("value").setText(String.valueOf(anElement)));
+						length++;
+					}
+				}
+
+				else if (long.class.isAssignableFrom(componentType)) {
+					for (long anElement : (long[]) object) {
+						System.out.print(anElement + ", ");
+						length++;
+					}
+				}
+
+				else if (short.class.isAssignableFrom(componentType)) {
+					for (short anElement : (short[]) object) {
+						System.out.print(anElement + ", ");
+						length++;
+					}
+				}
+			}
+			else if(String.class.isAssignableFrom(componentType)) {
+				for(String anElement : (String[]) object) {
+					objectTagged.addContent(new Element("value").setText(anElement));
+					length++;
+				}
+			}
+
+			else {
+				//handle Object[]
+				for(Object anElement : (Object[]) object) {
+					objectTagged.addContent(new Element("value").setText(anElement.toString()));
+					length++;
+				}
+			}
+		}
+		objectTagged.setAttribute(new Attribute("length", String.valueOf(length)));
+		return objectTagged;
+	}
+
+	
+	
+	
+	
+	
+	
+	
 	public void objectTag() {
 		int id = 0;
 		do {
@@ -27,7 +121,8 @@ public class Serializer {
 				Element object = new Element("object");
 				object.setAttribute(new Attribute("class", currentClass.getName()));
 				object.setAttribute(new Attribute("id", Integer.toString(id)));
-				
+				Element objectFinished = fieldArrays(currentObject, object);
+				doc.getRootElement().addContent(objectFinished);
 			}
 			
 			else{
