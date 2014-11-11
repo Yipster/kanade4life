@@ -1,4 +1,8 @@
-
+/* Author: Brandon Yip
+ * CPSC501 Assignment3
+ * 
+ * Driver class that will start the objectCreator.
+ */
 
 import java.util.*;
 

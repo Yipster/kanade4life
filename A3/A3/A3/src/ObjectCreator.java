@@ -1,11 +1,21 @@
 /*
 Author: Brandon Yip
- A test class that contains primitive fields and a Foo1 field (object field)
+CPSC501 Assignment3
+ A class that will prompt the user to create an object. There are 5 types of objects
+ 	1) Contain only primitive fields
+	2) Contain references to other objects
+	3) Contain an array of primitives
+	4) Contain an array of object references
+	5) Contains a java collection.
+	
+Then it will call serializer to serialize the object created. This will return a doc as well 
+as outport an xml file into the directory called output.xml.
+
 */
 
 import java.lang.reflect.*;
 import java.util.*;
-import java.io.*;
+import org.jdom.Document;
 
 public class ObjectCreator {
 
@@ -30,6 +40,7 @@ public class ObjectCreator {
 		System.out.println(" 2) Contain references to other objects");
 		System.out.println(" 3) Contain an array of primitives");
 		System.out.println(" 4) Contain an array of object references");
+		System.out.println(" 5) Contains a java collection.");
 		System.out.println(" Enter 'Q' to quit");
 		System.out.println("Input the corresponding number to your desire.");
 	}
@@ -122,19 +133,21 @@ public class ObjectCreator {
 			input = in.nextLine();
 			if(input.equals("1")){
 				object1();		
-				serializer.serialize(myObj);
-				Object myobj = deserializer.findXMLFile();
+				Document doc = serializer.serialize(myObj);
+				Object myobj = deserializer.deserialize(doc);
 				visualizer.inspect(myobj);
 			}
 			else if(input.equals("2")) {
 				object2();
-				serializer.serialize(myObj);
-				Object myobj = deserializer.findXMLFile();
+				Document doc = serializer.serialize(myObj);
+				Object myobj = deserializer.deserialize(doc);
 				visualizer.inspect(myobj);
 			}
 			else if(input.equals("3")) {
 				object3();
-				serializer.serialize(myObj);
+				Document doc = serializer.serialize(myObj);
+				Object myobj = deserializer.deserialize(doc);
+				visualizer.inspect(myobj);
 			}
 			else if(input.equals("4")) {
 

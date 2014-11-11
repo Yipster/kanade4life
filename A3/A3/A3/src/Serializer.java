@@ -1,4 +1,14 @@
+/*
+Author: Brandon Yip
+CPSC501 Assignment3
+ A class that will serialize an object, returning a doc and also outporting an XML file called output.xml
+ - Handles all objects created by objectCreator only.
+ - Requires you to pass in an object into serialize() method.
+ - Outputs an XMLFile called output.xml
+ - returns an org.jdom.Document.
+ - Follows the layout of the assignment.
 
+*/
 import java.util.*;
 import java.io.*;
 import java.lang.reflect.*;
@@ -180,17 +190,13 @@ public class Serializer {
 			doc = new Document(serialize);
 			doc.setRootElement(serialize);
 			
-			//set second tag to be object
-			objectTag();
-
-			//set third tag to be fields
-			
-
+			//set second tag to be object and it's fields
+			objectTag();		
 
 			//output to file
 			XMLOutputter xmlOutput = new XMLOutputter();
 			xmlOutput.setFormat(Format.getPrettyFormat());
-			xmlOutput.output(doc, new FileWriter("awesome.xml"));
+			xmlOutput.output(doc, new FileWriter("output.xml"));
 
 			System.out.println("File Saved!");
 		

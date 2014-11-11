@@ -1,6 +1,17 @@
+/*
+Author: Brandon Yip
+CPSC501 Assignment3
+ A class that take an object and figure out its class as well as its field and field values.
+ - Supports any class
+ - Only prints out class name and fields (this includes object fields and array fields)
+ - Recursively follows object references and also figures out those object information.
+ - All info is printed to console.
+*/
 
 import java.lang.reflect.*;
 import java.util.*;
+
+import org.jdom.Element;
 
 
 public class Visualizer {
@@ -140,7 +151,15 @@ public class Visualizer {
 						System.out.print("]");
 					}
 				}
-
+				else if(String.class.isAssignableFrom(componentType)) {
+					System.out.println("   Type: String[]");
+					System.out.print("   Value: [");
+					for(String anElement : (String[]) object) {
+						System.out.print(anElement + ", ");
+					}
+					System.out.print("]");
+				}
+				
 				else {
 					//handle Object[]					
 					System.out.println("   Type: " + componentType.getName());

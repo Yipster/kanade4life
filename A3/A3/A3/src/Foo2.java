@@ -1,6 +1,8 @@
 /*
 Author: Brandon Yip
- A test class that contains primitive fields and a Foo1 field (object field)
+CPSC501 Assignment3
+ A class that contains primitive fields and a Foo1 field (object field)
+ 2nd type of object that can be made in ObjectCreator
 */
 
 public class Foo2 {

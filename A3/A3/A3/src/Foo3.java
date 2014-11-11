@@ -1,3 +1,10 @@
+/*
+Author: Brandon Yip
+CPSC501 Assignment3
+ A class that only contains 2 primitive arrays with setters
+ 3rd type of object you can make in ObjectCreator
+*/
+
 public class Foo3 {
 	public int[] values;
 	public String[] punchphrases;

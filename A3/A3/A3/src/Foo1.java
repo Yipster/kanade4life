@@ -1,6 +1,8 @@
 /*
 Author: Brandon Yip
- A test class that only contains primitive fields
+CPSC501 Assignment3
+ A class that only contains 2 primitive fields with setters and getters
+ 1st type of object you can make in ObjectCreator
 */
 
 public class Foo1 {
