@@ -165,7 +165,8 @@ public class Visualizer {
 					System.out.println("   Type: " + componentType.getName());
 					System.out.print("   Value: [");
 					for(Object anElement : (Object[]) object) {
-						System.out.print(System.identityHashCode(anElement) + ", ");		
+						System.out.print(anElement.toString() + ", ");	
+						seen.push(anElement);
 					}
 					System.out.print("]");
 				}

@@ -18,6 +18,9 @@ import org.jdom.Document;
 import org.jdom.Element;
 
 public class Deserializer {
+	public int index; //variable for foo4;
+	
+	
 	public Object deserialize(org.jdom.Document document) {
 		System.out.println("===============================================\n"
 				+ "Deserializing object......");
@@ -87,6 +90,10 @@ public class Deserializer {
 				
 				obj = createFoo3(fields, messages, values);
 			}
+			else if(objectName.equals("Foo4")) {
+				obj = createFoo4(objects);
+				i = index;
+			}
 		}
 		return obj;
 	}
@@ -132,7 +139,7 @@ public class Deserializer {
 	
 	
 	//this method creates a new Foo3 object from the information of the JDOM
-	private Object createFoo3(List<Element> fields, Element field2, Element field3) {
+	public Object createFoo3(List<Element> fields, Element field2, Element field3) {
 		Object obj = new Object();
 		try {
 			Constructor c = Class.forName("Foo3").getConstructor();
@@ -160,12 +167,62 @@ public class Deserializer {
 		return obj;
 	}
 	
-	
-	public Object createFoo4() {
+	public Object createFoo4(List<Element> objects) {
 		Object obj = new Object();
+		try{
+			Constructor c = Class.forName("Foo4").getConstructor();
+			obj = c.newInstance();
+			index = 2;
+			Object reference1 = createFoo4References(objects);
+			Object reference2 = createFoo4References(objects);
+			
+			Foo4 foo4 = (Foo4) obj;
+			foo4.setIndex0(reference1);
+			foo4.setIndex1(reference2);
+			obj = foo4;
+			
+		} catch(Exception e) {
+			System.out.println("Problem with creating a Foo4 object.");
+		}
+		return obj;
+	}
+	
+	
+	
+	
+	public Object createFoo4References(List<Element> objects) {
+		Object obj = new Object();
+		try {
+			Element object = (Element) objects.get(index);
+			String objectName = object.getAttributeValue("class");
+			List<Element> fields = object.getChildren();
+			//if object is called Foo1 which only contains primitive types
+			if(objectName.equals("Foo1")) {
+				obj = createFoo1(fields); index++;
+			}
+			
+			else if(objectName.equals("Foo2")) {
+				//functionality for creating a Foo2 object.
+				//Note: Need to create a Foo1 object as well;
+				Element object2 = (Element)objects.get(index+1);
+				List<Element> fields2 = object2.getChildren();
+				index++; index++;
+				obj = createFoo2(fields, fields2);
+			}
+			else if(objectName.equals("Foo3")) {
+				//functionality for creating a Foo3 object
+				Element messages = (Element)objects.get(index+1);
+				Element values = (Element)objects.get(index+2);
+				index++; index++; index++;
+				
+				obj = createFoo3(fields, messages, values);
+			}
+		} catch(Exception e) { System.out.println("Problem with creating new object to put into array");}
 		
 		return obj;
 	}
+	
+	
 	
 	
 	//this method is to test when importing an XMLFile of the name awesome.xml

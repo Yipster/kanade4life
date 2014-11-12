@@ -30,7 +30,7 @@ public class Serializer {
 	
 	
 	
-	//handles printing of the array
+	//handles Serialization of elements of arrays
 	public Element fieldArrays(Object object, Element objectTag) {
 		Element objectTagged = objectTag;
 		int length = 0;
@@ -38,37 +38,37 @@ public class Serializer {
 			Class<?> componentType;
 			componentType = object.getClass().getComponentType();
 			if (componentType.isPrimitive()) {
+				//for boolean arrays
 				if (boolean.class.isAssignableFrom(componentType)) {
 					for (boolean anElement : (boolean[]) object) {
 						objectTagged.addContent(new Element("value").setText(String.valueOf(anElement)));
 						length++;
 					}
 				}
-				
 				else if (byte.class.isAssignableFrom(componentType)) {
 					for(byte anElement : (byte[]) object) {
-						System.out.print(anElement + ", ");
+						objectTagged.addContent(new Element("value").setText(String.valueOf(anElement)));
 						length++;
 					}
 				}
 
 				else if (char.class.isAssignableFrom(componentType)) {
 					for(char anElement : (char[]) object) {
-						System.out.print(anElement + ", ");
+						objectTagged.addContent(new Element("value").setText(String.valueOf(anElement)));
 						length++;
 					}
 				}
 
 				else if (double.class.isAssignableFrom(componentType)) {
 					for(double anElement : (double[]) object) {
-						System.out.print(anElement + ", ");
+						objectTagged.addContent(new Element("value").setText(String.valueOf(anElement)));
 						length++;
 					}
 				}
 
 				else if (float.class.isAssignableFrom(componentType)) {
 					for(float anElement : (float[]) object) {
-						System.out.print(anElement + ", ");
+						objectTagged.addContent(new Element("value").setText(String.valueOf(anElement)));
 						length++;
 					}
 				}
@@ -82,14 +82,14 @@ public class Serializer {
 
 				else if (long.class.isAssignableFrom(componentType)) {
 					for (long anElement : (long[]) object) {
-						System.out.print(anElement + ", ");
+						objectTagged.addContent(new Element("value").setText(String.valueOf(anElement)));
 						length++;
 					}
 				}
 
 				else if (short.class.isAssignableFrom(componentType)) {
 					for (short anElement : (short[]) object) {
-						System.out.print(anElement + ", ");
+						objectTagged.addContent(new Element("value").setText(String.valueOf(anElement)));
 						length++;
 					}
 				}
@@ -104,8 +104,9 @@ public class Serializer {
 			else {
 				//handle Object[]
 				for(Object anElement : (Object[]) object) {
-					objectTagged.addContent(new Element("value").setText(anElement.toString()));
+					objectTagged.addContent(new Element("reference").setText(anElement.toString()));
 					length++;
+					seen.push(anElement);
 				}
 			}
 		}
