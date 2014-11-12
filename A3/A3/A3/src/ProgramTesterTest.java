@@ -1,3 +1,10 @@
+/*
+Author: Brandon Yip
+CPSC501 Assignment3
+ A Junit test class that tests certain parts of the system.
+
+*/
+
 import static org.junit.Assert.*;
 
 import org.junit.Test;
