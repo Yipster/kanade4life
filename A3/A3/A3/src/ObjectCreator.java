@@ -188,7 +188,6 @@ public class ObjectCreator {
 					+ " 1) Foo1 (Object with 2 primitive fields)\n"
 					+ " 2) Foo2 (Object with 2 primitive fields and a Foo1 field)\n"
 					+ " 3) Foo3 (Object with 2 primitive arrays) \n"
-					+ " 4) Foo4 (Object with an array of objects (size of array is 2)"
 					+ "Note: You can add as many objects as you want, when you want to stop, enter 'Q'\n"
 					+ "So far the current objects you have made is(are) " + foo5.objectList.size() + " object(s)");
 			System.out.print("Input: ");
@@ -208,13 +207,8 @@ public class ObjectCreator {
 				foo5.objectList.add(object);
 				System.out.println("Object created successfully.");
 			}
-			else if(input.equals("4")) {
-				Object object = object4();
-				foo5.objectList.add(object);
-				System.out.println("Object created successfully.");
-			}
 			else {
-				System.out.println("You did not input 1, 2, 3, 4, or q");
+				System.out.println("You did not input 1, 2, 3, or q");
 			}
 		} while (!input.equalsIgnoreCase("q"));
 		System.out.println("Object Foo5 has been created.\n");
@@ -257,6 +251,8 @@ public class ObjectCreator {
 			else if(input.equals("5")) {
 				myObj = object5();
 				Document doc = serializer.serialize(myObj);
+				Object myobj = deserializer.deserialize(doc);
+				visualizer.inspect(myobj);
 			}
 			
 			else if(input.equalsIgnoreCase("q")) {

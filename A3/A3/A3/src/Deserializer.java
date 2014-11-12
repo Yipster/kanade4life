@@ -69,6 +69,10 @@ public class Deserializer {
 				obj = createFoo4(objects);
 				i = index;
 			}
+			else if(objectName.equals("Foo5")) {
+				obj = createFoo5(objects);
+				
+			}
 		}
 		return obj;
 	}
@@ -162,8 +166,28 @@ public class Deserializer {
 		return obj;
 	}
 	
-	
-	
+	public Object createFoo5(List<Element> objects) {
+		Object obj = new Object();
+		
+		try {
+			Constructor c = Class.forName("Foo5").getConstructor();
+			obj = c.newInstance();
+			Foo5 foo5 = (Foo5) obj;
+			LinkedList<Object> linkedlist = new LinkedList<Object>();
+			index = 3;
+			while(index < objects.size()){
+				Object reference = createFoo4References(objects);
+				linkedlist.add(reference);
+				System.out.println(index);
+			}
+			foo5.objectList = linkedlist;
+			System.out.println(foo5.objectList.size());
+			obj = foo5;
+		} catch(Exception e) {
+			System.out.println("Problem with creating a Foo5 object.");
+		}
+		return obj;
+	}
 	
 	public Object createFoo4References(List<Element> objects) {
 		Object obj = new Object();
@@ -196,6 +220,8 @@ public class Deserializer {
 		
 		return obj;
 	}
+
+	
 	
 	
 	
