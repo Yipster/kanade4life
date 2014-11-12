@@ -28,37 +28,12 @@ public class Deserializer {
 		try {
 			Element rootNode = document.getRootElement();
 			List<Element> objects = rootNode.getChildren();
-			/*
-			//prints it out to console just for now.
-			for(int i = 0; i < objects.size(); i++ ){
-				Element object = (Element) objects.get(i);
-				String objectName = object.getAttributeValue("class");
-				System.out.println("Class: " + objectName);
-				
-				//print out field values
-				List<Element> fields = object.getChildren();
-				for(int j = 0; j < fields.size(); j++) {
-					Element field = (Element) fields.get(j);
-					int k = j+1;
-					System.out.print("  Field" + k + ": " + field.getAttributeValue("name"));
-					if(field.getChildText("value") != null) {
-						System.out.print(" = " + field.getChildText("value"));					
-					}
-					else if(field.getChildText("reference") != null) {
-						System.out.print(" = " + field.getChildText("reference"));
-					}
-					System.out.println();
-				}
-				System.out.println();		
-			}*/
-			
-			//createObject here
 			obj = createObject(objects);
 		} catch (Exception e) {
 			System.out.println("Error in deserializing xml file");
 		}
 		
-		
+		System.out.println("===============================================\n");
 		return obj;
 	}
 

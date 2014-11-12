@@ -31,8 +31,10 @@ public class Serializer {
 	
 	
 	//handles Serialization of elements of arrays
-	public Element fieldArrays(Object object, Element objectTag) {
-		Element objectTagged = objectTag;
+	public Element fieldArrays(Object object, int id) {
+		Element objectTagged = new Element("object");
+		objectTagged.setAttribute(new Attribute("class", currentClass.getName()));
+		objectTagged.setAttribute(new Attribute("id", Integer.toString(id)));
 		int length = 0;
 		if (object.getClass().isArray()) {
 			Class<?> componentType;
@@ -115,7 +117,24 @@ public class Serializer {
 	}
 
 	
-	
+	public Element createLLElement(Object object, int id) {
+		Element linkedList = new Element("object");
+		linkedList.setAttribute(new Attribute("class", object.getClass().getName()));
+		linkedList.setAttribute(new Attribute("id", Integer.toString(id)));
+		LinkedList objectList = (LinkedList) object;
+		int i = 0;
+		while(objectList.peek() != null) {
+			Object newObject = objectList.remove();
+			seen.push(newObject);
+			Element field = new Element("field" + Integer.toString(i));
+			field.setAttribute(new Attribute("name", newObject.getClass().getName()));
+			field.setAttribute(new Attribute("declaringclass","java.util.LinkedList"));
+			field.addContent(new Element("reference").setText(newObject.toString()));
+			linkedList.addContent(field);
+			i++;
+		}
+		return linkedList;
+	}
 	
 	
 	
@@ -129,13 +148,18 @@ public class Serializer {
 				currentClass = currentObject.getClass();
 			}
 			if(currentClass.isArray()) {
-				Element object = new Element("object");
-				object.setAttribute(new Attribute("class", currentClass.getName()));
-				object.setAttribute(new Attribute("id", Integer.toString(id)));
-				Element objectFinished = fieldArrays(currentObject, object);
-				doc.getRootElement().addContent(objectFinished);
+				Element object = fieldArrays(currentObject, id);
+				doc.getRootElement().addContent(object);
 			}
-			
+			else if(currentClass.getName().equals("java.util.LinkedList")) {
+				/*LinkedList<Object> objectList = (LinkedList<Object>) currentObject;
+				Object object1 = objectList.get(1);
+				Object object2 = objectList.get(2);
+				System.out.println(object1.getClass().getName());
+				System.out.println(object2.getClass().getName());*/
+				Element object = createLLElement(currentObject, id);
+				doc.getRootElement().addContent(object);
+			}
 			else{
 				Element object = new Element("object");
 				object.setAttribute(new Attribute("class", currentClass.getName()));
@@ -182,7 +206,8 @@ public class Serializer {
 	
 
 	public org.jdom.Document serialize(Object obj) {
-		System.out.println("Beginning to Serialize Object.....");
+		System.out.println("===============================================\n"
+				+ "Beginning to Serialize Object.....");
 		currentObject = obj;
 		currentClass = currentObject.getClass();
 		try {
