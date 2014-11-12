@@ -10,9 +10,7 @@ CPSC501 Assignment3
 
 import java.lang.reflect.*;
 import java.util.*;
-
 import org.jdom.Element;
-
 
 public class Visualizer {
 	public Class currentClass;

@@ -226,11 +226,11 @@ public class Deserializer {
 	
 	
 	
-	//this method is to test when importing an XMLFile of the name awesome.xml
+	//this method is to test when importing an XMLFile of the name output.xml
 	//And seeing if it deserializes properly.
 	public Object findXMLFile() {
 		SAXBuilder builder = new SAXBuilder();
-		File xmlFile = new File("awesome.xml");
+		File xmlFile = new File("output.xml");
 		Object obj = new Object();
 		try {
 			Document doc = (Document) builder.build(xmlFile);
