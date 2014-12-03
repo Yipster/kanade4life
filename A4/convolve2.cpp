@@ -2,13 +2,14 @@
 * Name: Brandon Yip
 * CPSC 501 Assignment 4
 * 
-* This is the baseline program that will do the convolution process.
+* This is the optimized program that will do the convolution process using FFT convolution.
 * 1) Takes two inputs, one which is the dry sound .wav file and one which is the impulse sound .wav file
 * 2) Reads both inputs
 * 3) Convolves the two inputs into an output buffer
 * 4) Writes output buffer to output file
 * 5) Takes the total duration of the process.
 */
+
 
 #include <stdio.h>
 #include <stdint.h>
@@ -17,6 +18,8 @@
 #include <ctime>
 #include <math.h>
 #include <fstream>
+#define TWO_PI (2.0 * M_PI)
+// PI is defined in math.h with the use of M_PI
 
 //This is the wave header
 struct WAVE_HEADER
@@ -26,7 +29,7 @@ struct WAVE_HEADER
 	uint32_t chunk_size;
 	char WAVE[4];
 	
-	// Header 2 fmt sub-chunk
+	// Header 2
 	char subchunk1_id[4];
 	uint32_t subchunk1_size;
 	uint16_t audio_format;
@@ -46,8 +49,20 @@ struct WAVE_HEADER
 
 
 
-/*  Function prototypes  */
-void print_vector(char *title, double x[], int N);
+//method to calculate dft
+void dft(double x[], int N, double a[], double b[]) {
+	int n, k;
+	double omega = TWO_PI/ (double) N;
+	for(k = 0; k < N; k++) {
+		a[k] = b[k] = 0.0;
+		for(n = 0; n < N; n++) {
+			a[k] += (x[n] * cos(omega * n * k));
+			b[k] -= (x[n] *  sin(omega * n * k));
+		}
+	}
+}
+
+
 
 
 // main program
@@ -130,11 +145,16 @@ int main(int argc, char **argv) {
 	printf("Size of input (N) = %d\n", N);
 	printf("Size of impulse (M) = %d\n", M);
 	
+	size_t A = N + M - 1;
+	if((A % 2) == 1)
+		A++;
+		
+	
 	// Initialize buffers for input and IR
-	double *input_buffer1 = new double[N];
-	double *input_buffer2 = new double[N];
-	double *impulse_buffer1 = new double[M];
-	double *impulse_buffer2 = new double[M];
+	double *input_buffer1 = new double[A];
+	double *input_buffer2 = new double[A];
+	double *impulse_buffer1 = new double[A];
+	double *impulse_buffer2 = new double[A];
 	
 	// Read input data
 	printf("Reading input data... ");
@@ -149,6 +169,10 @@ int main(int argc, char **argv) {
 				input_buffer2[i] = sample;
 			}
 		}
+		for(int i = N; i < A; i++) {
+			input_buffer1[i] = 0.0;
+			input_buffer2[i] = 0.0;
+		}
 	}
 	else if (input_bps == 2) {
 		double sample;
@@ -161,15 +185,16 @@ int main(int argc, char **argv) {
 				input_buffer2[i] = sample;
 			}
 		}
+		for(int i = N; i < A; i++) {
+			input_buffer1[i] = 0.0;
+			input_buffer2[i] = 0.0;
+		}
 	}
 	else {
 		printf("Unsupported sample size %d\n", input_bps);
 		return -1;
 	}
 	printf("Completed Reading of Input data\n");
-	
-	
-	
 	
 	
 	// Read IR data
@@ -185,6 +210,10 @@ int main(int argc, char **argv) {
 				impulse_buffer2[i] = sample;
 			}
 		}
+		for(int i = M; i < A; i++) {
+			impulse_buffer1[i] = 0.0;
+			impulse_buffer2[i] = 0.0;
+		}
 	}
 	else if (impulse_bps == 2) {
 		double sample;
@@ -197,18 +226,60 @@ int main(int argc, char **argv) {
 				impulse_buffer2[i] = sample;
 			}
 		}
+		for(int i = M; i < A; i++) {
+			impulse_buffer1[i] = 0.0;
+			impulse_buffer2[i] = 0.0;
+		}
 	}
 	else {
 		printf("Unsupported sample size %d\n", impulse_bps);
 		return -1;
 	}
 	printf("Completed Reading of IR data\n");
-
+	
+	
+	
+	
+	//Changes start now
+	//First to convert both input and impulse to the frequency domain
+	double real_input[A/2], imaginary_input[A/2];
+	double real_impulse[A/2], imaginary_impulse[A/2];
+	
+	//Convert input where input_buffer is x[n]
+	if(input_bps == 1 | input_bps == 2) {
+		double real_input[A/2], imaginary_input[A/2];
+		int n, k;
+		double omega = TWO_PI/(double) N;
+		printf("Value of omega: %d\n", omega);
+		for(k = 0; k < A/2; k++){
+			real_input[k] = imaginary_input[k] = 0.0;
+			for(n = 0; n < A/2; n++){
+				real_input[k] += (input_buffer1[n] * cos(omega * n * k));
+				imaginary_input[k] -= (input_buffer1[n] * sin(omega * n * k));
+			}
+		}
+	}
+	
+	//convert impulse where impulse_buffer is h[n]
+	if(impulse_bps == 1 | impulse_bps == 2) {
+		int n, k;
+		double omega = TWO_PI/(double) N;
+		printf("Value of omega: %d\n", omega);
+		for(k = 0; k < A/2; k++){
+			real_impulse[k] = imaginary_impulse[k] = 0.0;
+			for(n = 0; n < A/2; n++){
+				real_impulse[k] += (impulse_buffer1[n] * cos(omega * n * k));
+				imaginary_impulse[k] -= (impulse_buffer1[n] * sin(omega * n * k));
+			}
+		}
+	}
+	
+		
 	//Initialize output buffer
 	printf(" Starting Convolve Process... \n");
 	// Calculate the sample size of output buffer
 	int P = N + M - 1;
-	printf("Size of Output buffer: %d\n", P);
+	printf("Size of Output buffer: %d\n, P");
 	
 	//Generate new buffers for output
 	double *output_buffer1 = new double[P];
@@ -220,7 +291,10 @@ int main(int argc, char **argv) {
 		output_buffer1[p] = 0;
 		output_buffer2[p] = 0;
 	}
-	printf("Initialization of output buffer complete\n");
+	printf(" Initialization of output buffer complete\n");
+	
+	
+	
 	
 	// Convolve Process Start
 	printf(" Starting Convolving Process... \n");
@@ -235,7 +309,7 @@ int main(int argc, char **argv) {
 	printf("Completed Convolve Process\n");
 	
 	
-	
+	/*
 	
 	// Write data to output file
 	printf("Starting to Write data... ");
@@ -281,8 +355,13 @@ int main(int argc, char **argv) {
 	clock_t duration = (endtime - starttime)/CLOCKS_PER_SEC;
 	printf("Total Runtime: %d seconds.\n", duration);
 	
+	*/
 	return 0;
 }
+
+
+
+
 
 void print_vector(char *title, double x[], int N)
 {
@@ -294,4 +373,3 @@ void print_vector(char *title, double x[], int N)
   for (i = 0; i < N; i++)
     printf("%-d\t\t%f\n", i, x[i]);
 }
-
