@@ -283,15 +283,3 @@ int main(int argc, char **argv) {
 	
 	return 0;
 }
-
-void print_vector(char *title, double x[], int N)
-{
-  int i;
-
-  printf("\n%s\n", title);
-  printf("Vector size:  %-d\n", N);
-  printf("Sample Number \tSample Value\n");
-  for (i = 0; i < N; i++)
-    printf("%-d\t\t%f\n", i, x[i]);
-}
-

@@ -239,57 +239,57 @@ int main(int argc, char **argv) {
 	
 	
 	
-	
+	size_t B = A/2;
 	//Changes start now
 	//First to convert both input and impulse to the frequency domain
-	double real_input[A/2], imaginary_input[A/2];
-	double real_impulse[A/2], imaginary_impulse[A/2];
-	
+	double *real_input = new double[B];
+	double *imaginary_input = new double[B];
+	double *real_impulse = new double[B];
+	double *imaginary_impulse = new double[B];
 	//Convert input where input_buffer is x[n]
 	if(input_bps == 1 | input_bps == 2) {
-		double real_input[A/2], imaginary_input[A/2];
 		int n, k;
-		double omega = TWO_PI/(double) N;
+		double omega = (M_PI *2)/(double) N;
 		printf("Value of omega: %d\n", omega);
-		for(k = 0; k < A/2; k++){
-			real_input[k] = imaginary_input[k] = 0.0;
-			for(n = 0; n < A/2; n++){
+		for(k = 0; k < B; k++){
+			real_input[k] = 0.0;
+			imaginary_input[k] = 0.0;
+			//printf("%d\t\t%zu\n%",k, B);
+			for(n = 0; n < B; n++){
 				real_input[k] += (input_buffer1[n] * cos(omega * n * k));
 				imaginary_input[k] -= (input_buffer1[n] * sin(omega * n * k));
 			}
 		}
 	}
+	printf("Completed change of input to frequency domain");
 	
 	//convert impulse where impulse_buffer is h[n]
 	if(impulse_bps == 1 | impulse_bps == 2) {
 		int n, k;
-		double omega = TWO_PI/(double) N;
+		double omega =(M_PI *2)/(double) N;
 		printf("Value of omega: %d\n", omega);
-		for(k = 0; k < A/2; k++){
+		for(k = 0; k < B; k++){
 			real_impulse[k] = imaginary_impulse[k] = 0.0;
-			for(n = 0; n < A/2; n++){
+			for(n = 0; n < B; n++){
 				real_impulse[k] += (impulse_buffer1[n] * cos(omega * n * k));
 				imaginary_impulse[k] -= (impulse_buffer1[n] * sin(omega * n * k));
 			}
 		}
 	}
-	
+	printf("Completed change of impulse to frequency domain");
 		
 	//Initialize output buffer
 	printf(" Starting Convolve Process... \n");
 	// Calculate the sample size of output buffer
-	int P = N + M - 1;
-	printf("Size of Output buffer: %d\n, P");
-	
 	//Generate new buffers for output
-	double *output_buffer1 = new double[P];
-	double *output_buffer2 = new double[P];
+	double *output_buffer1 = new double[A];
+	double *output_buffer2 = new double[A];
 	
 	//initialize the output buffer
-	for (int p = 0; p < P; p++) {
+	for (int p = 0; p < A; p++) {
 		//printf("Initializing output_buffer[%d]\n", p);
-		output_buffer1[p] = 0;
-		output_buffer2[p] = 0;
+		output_buffer1[A] = 0;
+		output_buffer2[A] = 0;
 	}
 	printf(" Initialization of output buffer complete\n");
 	
@@ -299,24 +299,22 @@ int main(int argc, char **argv) {
 	// Convolve Process Start
 	printf(" Starting Convolving Process... \n");
 	//start convolve process by multiplying impulse and input buffer and placing it in n+m slot in output buffer
-	for (int n = 0; n < N; n++) {
+	for (int n = 0; n < B; n++) {
 		//printf("Convolving: %d/%d\n", n, N);
-		for (int m = 0; m < M; m++) {
-			output_buffer1[n + m] += input_buffer1[n] * impulse_buffer1[m];
-			output_buffer2[n + m] += input_buffer2[n] * impulse_buffer2[m];
-		}
+		output_buffer1[n] += (real_input[n] * real_impulse[n]) -(imaginary_input[n] * imaginary_impulse[n]);
+		output_buffer2[n] += (imaginary_input[n] * imaginary_impulse[n]) + (real_input[n] * real_impulse[n]);
 	}
 	printf("Completed Convolve Process\n");
 	
 	
-	/*
+	
 	
 	// Write data to output file
 	printf("Starting to Write data... ");
 	fwrite(&input_header, sizeof(WAVE_HEADER), 1, output_file);
 	if (input_bps == 1) {
 		double sample;
-		for (int i = 0; i < P; i++) {
+		for (int i = 0; i < A; i++) {
 			//printf("Writing into output_file: %d/%d\n", i, P);
 			sample = output_buffer1[i];
 			fwrite(&sample, input_bps, 1, output_file);
@@ -328,7 +326,7 @@ int main(int argc, char **argv) {
 	}
 	else if (input_bps == 2) {
 		double sample;
-		for (int i = 0; i < P; i++) {
+		for (int i = 0; i < A; i++) {
 			//printf("Writing into output_file: %d/%d\n", i, P);
 			sample = output_buffer1[i];
 			fwrite(&sample, input_bps, 1, output_file);
@@ -355,21 +353,6 @@ int main(int argc, char **argv) {
 	clock_t duration = (endtime - starttime)/CLOCKS_PER_SEC;
 	printf("Total Runtime: %d seconds.\n", duration);
 	
-	*/
+	
 	return 0;
-}
-
-
-
-
-
-void print_vector(char *title, double x[], int N)
-{
-  int i;
-
-  printf("\n%s\n", title);
-  printf("Vector size:  %-d\n", N);
-  printf("Sample Number \tSample Value\n");
-  for (i = 0; i < N; i++)
-    printf("%-d\t\t%f\n", i, x[i]);
 }
