@@ -19,7 +19,7 @@
 #include <fstream>
 
 //This is the wave header
-struct WAVE_HEADER
+struct WAV_HEADER
 {
 	// Header 1 RIFF chunk descriptor
 	char RIFF[4];
@@ -54,11 +54,11 @@ void print_vector(char *title, double x[], int N);
 int main(int argc, char **argv) {
 	clock_t starttime = clock();
 	
-	printf("Size of WAVE_HEADER: %d\n", sizeof(WAVE_HEADER));
+	printf("Size of WAV_HEADER: %d\n", sizeof(WAV_HEADER));
 	
 	//make two structs, for each input
-	struct WAVE_HEADER input_header;
-	struct WAVE_HEADER impulse_header;
+	struct WAV_HEADER input_header;
+	struct WAV_HEADER impulse_header;
 	
 	// Checks to see if the correct number of arguments is passed in
 	if (argc != 4) {
@@ -92,7 +92,7 @@ int main(int argc, char **argv) {
 
 	
 	// information (header) of input file
-	fread(&input_header, sizeof(WAVE_HEADER), 1, input_file);
+	fread(&input_header, sizeof(WAV_HEADER), 1, input_file);
 	
 	printf("==================================================\n");
 	printf("Input file: \n");
@@ -102,7 +102,7 @@ int main(int argc, char **argv) {
 
 
 	// information (header) of impulse file (ir)
-	fread(&impulse_header, sizeof(WAVE_HEADER), 1, impulse_file);
+	fread(&impulse_header, sizeof(WAV_HEADER), 1, impulse_file);
 	printf("==================================================\n");	
 	printf("IR file: \n");
 	printf("format: %i, channels: %i, sample rate: %d, ", impulse_header.audio_format, impulse_header.num_channels, impulse_header.sample_rate);
@@ -151,14 +151,18 @@ int main(int argc, char **argv) {
 		}
 	}
 	else if (input_bps == 2) {
-		double sample;
+		double *sample;
+		sample = (double *) malloc(2);
 		for (int i = 0; i < N; i++) {
-			fread(&sample, input_bps, 1, input_file);
+			fread(sample, input_bps, 1, input_file);
+			//double sample1 =  sample;
+			double sample1 = *sample;
+			printf("%f\n", sample1);
 			//printf("Reading into input_buffer: %d/%d	%d\n", i, N, sample);
-			input_buffer1[i] = sample;
+			input_buffer1[i] = *sample;
 			if (input_header.num_channels == 2) {
 				fread(&sample, input_bps, 1, input_file);
-				input_buffer2[i] = sample;
+				input_buffer2[i] = *sample;
 			}
 		}
 	}
@@ -239,7 +243,7 @@ int main(int argc, char **argv) {
 	
 	// Write data to output file
 	printf("Starting to Write data... ");
-	fwrite(&input_header, sizeof(WAVE_HEADER), 1, output_file);
+	fwrite(&input_header, sizeof(WAV_HEADER), 1, output_file);
 	if (input_bps == 1) {
 		double sample;
 		for (int i = 0; i < P; i++) {

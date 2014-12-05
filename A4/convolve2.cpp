@@ -155,7 +155,7 @@ int main(int argc, char **argv) {
 	double *input_buffer2 = new double[A];
 	double *impulse_buffer1 = new double[A];
 	double *impulse_buffer2 = new double[A];
-	
+	 
 	// Read input data
 	printf("Reading input data... ");
 	if (input_bps == 1) {
